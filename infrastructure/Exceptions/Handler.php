@@ -27,18 +27,6 @@ class Handler extends ExceptionHandler
         'password_confirmation',
     ];
 
-    /**
-     * Register the exception handling callbacks for the application.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        $this->reportable(function (Throwable $e) {
-            
-        });
-    }
-
 
     /**
      * Report or log an exception.
@@ -67,6 +55,7 @@ class Handler extends ExceptionHandler
         return $this->renderApiException($request, $exception);
         return parent::render($request, $exception);
     }
+
     protected function renderApiException($request, $exception) {
         $debugMode = \Config('config.app_debug');
         if($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
@@ -77,6 +66,7 @@ class Handler extends ExceptionHandler
             $message = $this->getMessageByCode($exception->getCode(),'error');
             return redirect()->back()->withErrors(['notify_error_system' => $message]);
         }
+        return \redirect('/errors/404');
     }
 
     //=================> SUPPORT METHOD <======================
