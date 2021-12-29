@@ -2,10 +2,7 @@
 
 namespace Infrastructure\Exceptions;
 
-use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Infrastructure\Exceptions as CustomException;
-use Infrastructure\Libraries\Response;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -28,6 +25,19 @@ class Handler extends ExceptionHandler
         'password',
         'password_confirmation',
     ];
+
+    /**
+     * Register the exception handling callbacks for the application.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->reportable(function (Throwable $e) {
+            
+        });
+    }
+
 
     /**
      * Report or log an exception.
@@ -57,29 +67,24 @@ class Handler extends ExceptionHandler
         return parent::render($request, $exception);
     }
     protected function renderApiException($request, $exception) {
-        $response = new Response();
         $debugMode = \Config('config.app_debug');
-        if($exception instanceof ExceptionInterface) {
-            $message = $response->renderError($exception->getCode(), $exception->getMessage(), $exception->getData(), null, $exception->getParameters());
-        } else if($exception instanceof \Illuminate\Database\QueryException) {
-            if($debugMode) {
-                $message = $response->renderError('FWE005', $exception->getMessage(), null, $exception->getMessage());
-            }else {
-                $message = $response->renderError('FWE005', null, null, $exception->getMessage());
-            }
-        } else if($exception instanceof \Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException) {
-            $message = $response->renderError('FWE004', null, null, $exception->getMessage());
-        } else if($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
-            $message = $response->renderError('FWE003', null, null, $exception->getMessage());
-        }else if($exception instanceof \Illuminate\Database\Eloquent\ModelNotFoundException){
-            $message = $response->renderError('FWE007', null, null, $exception->getMessage());
-        }else {
-            if($debugMode) {
-                $message = $response->renderError('FWE999', 'File: ' . $exception->getFile() . ', Line: ' . $exception->getLine() . ', Message: ' . $exception->getMessage(), null, $exception->getMessage());
-            }else {
-                $message = $response->renderError('FWE999');
-            }
+        if($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
+            return \redirect('/errors/404');
+        }else if($exception instanceof \Illuminate\Validation\ValidationException){
+            return redirect()->back()->withErrors($exception->errors())->withInput($request->all());
+        }else if($exception instanceof ExceptionInterface) {
+            $message = $this->getMessageByCode($exception->getCode(),'error');
+            return redirect()->back()->withErrors(['notify_error_system' => $message]);
         }
+    }
+
+    //=================> SUPPORT METHOD <======================
+    private function getMessageByCode($code,$status)
+    {
+        $statusList = file_get_contents(base_path('config/status_list.json'));
+        $statusList = json_decode($statusList,true);
+        $message = __(@$statusList[$status][$code]);
         return $message;
     }
+
 }

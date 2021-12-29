@@ -12,7 +12,7 @@ class Locale
         date_default_timezone_set($timezone);
         $lang = @$request->header()['lang'][0];
         if(!$lang){
-            \App::setLocale('ja');
+            \App::setLocale('vi');
         }else{
             \App::setLocale(@$request->header()['lang'][0]);
         }
