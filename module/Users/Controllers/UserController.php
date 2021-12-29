@@ -9,7 +9,7 @@ class UserController extends Controller{
 
     public function getAll()
     {
-        return 'user';
+        return view('admin.users.index');
     }
 
     public function createUser(CreateUserRequest $request)

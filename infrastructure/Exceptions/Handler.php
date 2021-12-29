@@ -57,7 +57,6 @@ class Handler extends ExceptionHandler
     }
 
     protected function renderApiException($request, $exception) {
-        dd($exception);
         $debugMode = \Config('config.app_debug');
         if($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
             return \redirect('/errors/404');
