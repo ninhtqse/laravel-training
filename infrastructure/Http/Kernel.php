@@ -53,6 +53,6 @@ class Kernel extends HttpKernel
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'login'=> \Infrastructure\Auth\Middleware\CheckLogin::class,
+        'check_login'=> \Infrastructure\Auth\Middleware\CheckLogin::class,
     ];
 }

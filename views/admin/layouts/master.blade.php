@@ -186,7 +186,7 @@
                 </ul>
               </li>
                     <li class="dropdown topbar-profile">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="rounded-image topbar-profile-image"><img src="images/users/user3-128x128.jpg"></span> Sahara Smith </a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="rounded-image topbar-profile-image"><img src="../admin_html/images/users/user3-128x128.jpg"></span> Sahara Smith </a>
                         <ul class="dropdown-menu">
                             <li><a href="#">My Profile</a></li>
                             <li><a href="#">Change Password</a></li>
@@ -194,7 +194,7 @@
                             <li class="divider"></li>
                             <li><a href="#"><i class="icon-help-2"></i> Help</a></li>
                             <li><a href="lockscreen.html"><i class="icon-lock-1"></i> Lock me</a></li>
-                            <li><a class="md-trigger" data-modal="logout-modal"><i class="icon-logout-1"></i> Logout</a></li>
+                            <li><a class="md-trigger" data-modal="logout-modal" href="{{ route('logout') }}" ><i class="icon-logout-1"></i> Logout</a></li>
                         </ul>
                     </li>
                     <li class="right-opener">
