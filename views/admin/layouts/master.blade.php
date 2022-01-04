@@ -198,7 +198,7 @@
                         </ul>
                     </li>
                     <li class="right-opener">
-                        <a href="#" class=""><i class="fa fa-power-off" aria-hidden="true"></i></a>
+                        <a href="{{ route('logout') }}" class=""><i class="fa fa-power-off" aria-hidden="true"></i></a>
                     </li>
                 </ul>
             </div>

@@ -9,7 +9,7 @@ return [
         ],
     
         'protection_middleware' => [
-            'web'
+            'auth:web'
         ],
     
         'protection_basic_middleware' => [

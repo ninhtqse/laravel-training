@@ -102,15 +102,20 @@
 	</div>        <!-- Modal End -->		
 	<!-- Begin page -->
 	<div class="container">
+		@if(session()->has('LoginFail'))
+                   		 <p class="text-danger text-center" > Đăng nhập thất bại </p>
+                    	@endif
 		<div class="full-content-center">
 			<p class="text-center"><a href="#"><img src="../admin_html/assets/img/login-logo.png" alt="Logo"></a></p>
 			<div class="login-wrap animated flipInX">
 				<div class="login-block">
 					<img src="../admin_html/images/users/default-user.jpg" class="img-circle not-logged-avatar">
-					<form role="form"  method="POST">
+					
+					<form role="form" action="{{ route('login') }}"  method="POST">
 						@csrf
 						<div class="form-group login-input">
 						<i class="fa fa-user overlay"></i>
+						
 						<input type="text" class="form-control text-input" placeholder="Username" name="login[email]">
 						</div>
 						<div class="form-group login-input">
