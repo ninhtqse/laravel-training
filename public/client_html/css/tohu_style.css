@@ -55,7 +55,7 @@
     width: 55%;
 }
 #shoulder #shoulderCol .btnBox {
-	right: 3%;	
+	right: 3%;
 }
 }
 
@@ -239,7 +239,7 @@ header #headCol #navi{
 @media screen and (max-width: 768px) {
 header #menu {
 	display:block;
-    right: 3%;	
+    right: 3%;
 }
 }
 @media screen and (max-width: 480px) {
@@ -266,7 +266,7 @@ header #headCol .btnBox .searchMenu img{
 }
 @media screen and (max-width: 768px){
 header #headCol .btnBox {
-	right: 3%;	
+	right: 3%;
 }
 }
 
@@ -350,7 +350,7 @@ header #headCol .btnBox {
 	background:#000;
 	box-sizing:border-box;
 	width:30%;
-	cursor:pointer;	
+	cursor:pointer;
 	-webkit-transition-duration: 0.2s;
 	-moz-transition-duration: 0.2s;
 	-o-transition-duration: 0.2s;
@@ -516,7 +516,7 @@ nav#gnavi #gnaviCol ul.share{
 	margin:3.5em 0 0;
 }
 nav#gnavi #gnaviCol ul.share li{
-	margin: 0 25px 0 0;	
+	margin: 0 25px 0 0;
 }
 nav#gnavi #gnaviCol ul.share li a {
 	width: 36px;
@@ -524,8 +524,8 @@ nav#gnavi #gnaviCol ul.share li a {
 	background:#0f1937;
 	cursor:pointer;
 	z-index:100;
-	border-radius: 50%;        /* CSS3草案 */  
-    -webkit-border-radius: 50%;    /* Safari,Google Chrome用 */  
+	border-radius: 50%;        /* CSS3草案 */
+    -webkit-border-radius: 50%;    /* Safari,Google Chrome用 */
     -moz-border-radius: 50%;   /* Firefox用 */
     display: block;
     text-align: center;
@@ -738,7 +738,7 @@ nav#gnavi #gnaviCol ul.share li.insta img {
 	border: solid 2px #000;
 	box-sizing:border-box;
 	width:60%;
-	cursor:pointer;	
+	cursor:pointer;
 	-webkit-transition-duration: 0.2s;
 	-moz-transition-duration: 0.2s;
 	-o-transition-duration: 0.2s;
@@ -789,7 +789,7 @@ nav#gnavi #gnaviCol ul.share li.insta img {
 #products {
     width: 85%;
 	max-width:1000px;
-    margin: 0 auto;    
+    margin: 0 auto;
 	text-align:left;
 	padding-top: 70px;
 	padding-bottom: 70px;
@@ -812,7 +812,7 @@ nav#gnavi #gnaviCol ul.share li.insta img {
 	display: -webkit-flex;
 	display: flex;
 	-webkit-flex-wrap: wrap;
-   flex-wrap: wrap;   
+   flex-wrap: wrap;
 }
 #products ul.product_list li.column{
 	text-align:center;
@@ -826,7 +826,7 @@ nav#gnavi #gnaviCol ul.share li.insta img {
 	padding-right: 0;
 }
 #products ul.product_list li.column p.pht {
-	margin:0 auto;	
+	margin:0 auto;
 	overflow:hidden;
 	line-height: 0;
 }
@@ -865,7 +865,7 @@ nav#gnavi #gnaviCol ul.share li.insta img {
 	border: solid 2px #000;
 	box-sizing:border-box;
 	width:60%;
-	cursor:pointer;	
+	cursor:pointer;
 	-webkit-transition-duration: 0.2s;
 	-moz-transition-duration: 0.2s;
 	-o-transition-duration: 0.2s;
@@ -946,7 +946,7 @@ nav#gnavi #gnaviCol ul.share li.insta img {
 	background:#f2f2f2;
 	box-sizing:border-box;
 	/*width:60%;*/
-	cursor:pointer;	
+	cursor:pointer;
 	-webkit-transition-duration: 0.2s;
 	-moz-transition-duration: 0.2s;
 	-o-transition-duration: 0.2s;
@@ -1088,7 +1088,7 @@ nav#gnavi #gnaviCol ul.share li.insta img {
 	border: solid 2px #000;
 	box-sizing:border-box;
 	width:60%;
-	cursor:pointer;	
+	cursor:pointer;
 	-webkit-transition-duration: 0.2s;
 	-moz-transition-duration: 0.2s;
 	-o-transition-duration: 0.2s;
@@ -1210,7 +1210,7 @@ nav#gnavi #gnaviCol ul.share li.insta img {
 	width: 480px;
     flex-wrap: nowrap;
 }
-#rankingCategory #rankingCategoryCol .mens, 
+#rankingCategory #rankingCategoryCol .mens,
 	#rankingCategory #rankingCategoryCol .ladies {
     display: block;
     padding: 15px 0 15px;
@@ -1235,10 +1235,10 @@ nav#gnavi #gnaviCol ul.share li.insta img {
 }
 }
 @media screen and (max-width: 480px){
-}	
+}
 
 /*====================================================================
- blog
+ blogs
 ====================================================================*/
 #blogBox {
 	width:100%;
@@ -1315,7 +1315,7 @@ nav#gnavi #gnaviCol ul.share li.insta img {
 	border: solid 2px #000;
 	box-sizing:border-box;
 	width:50%;
-	cursor:pointer;	
+	cursor:pointer;
 	-webkit-transition-duration: 0.2s;
 	-moz-transition-duration: 0.2s;
 	-o-transition-duration: 0.2s;
@@ -1440,7 +1440,7 @@ nav#gnavi #gnaviCol ul.share li.insta img {
 #fashionista #fashionistaCol .image_container {
     padding:0 5%;
     overflow: hidden;
-}       
+}
 #fashionista #fashionistaCol .pht {
     width:100%;
     overflow: hidden;
@@ -1553,7 +1553,7 @@ nav#gnavi #gnaviCol ul.share li.insta img {
 }
 #categories #categoriesCol .ladies{
     border-bottom: solid 5px #f2f2f2;
-}  
+}
 #categories #categoriesCol img{
     width:100%;
 }
@@ -1623,7 +1623,7 @@ nav#gnavi #gnaviCol ul.share li.insta img {
 	margin: 0 auto;
 	padding: 1.5em 0 0;
 }
-#categories #categoriesCol .mens, 
+#categories #categoriesCol .mens,
 #categories #categoriesCol .ladies {
     display: block;
 	overflow: auto;
@@ -1632,7 +1632,7 @@ nav#gnavi #gnaviCol ul.share li.insta img {
 #categories #categoriesCol .mens {
     border-bottom: solid 5px #f2f2f2;
 }
-#categories #categoriesCol .mens .ttl, 
+#categories #categoriesCol .mens .ttl,
 #categories #categoriesCol .ladies .ttl {
     margin: 0 auto;
 }
@@ -1680,14 +1680,14 @@ nav#gnavi #gnaviCol ul.share li.insta img {
 }
 #notes #notesCol ul.accordion > li .menu {
     position: relative;
-    padding: 12px 50px;    
+    padding: 12px 50px;
     font-size:12px;
 	text-align:left;
 	cursor:pointer;
 	-webkit-transition-duration: 0.2s;
 	-moz-transition-duration: 0.2s;
 	-o-transition-duration: 0.2s;
-	transition-duration: 0.2s;	
+	transition-duration: 0.2s;
 }
 #notes #notesCol ul.accordion > li .menu:hover{
 	filter: alpha(opacity=70);
@@ -2029,7 +2029,7 @@ nav#gnavi #gnaviCol ul.share li.insta img {
 	height: 40px;
 	bottom: 2vh;
 	right: 2%;
-	
+
 }
 #pageTop a::before,
 #pageTop a::after {
@@ -2443,7 +2443,7 @@ nav#gnavi #gnaviCol ul.share li.insta img {
     -moz-opacity:0.7;
     -khtml-opacity: 0.7;
 }
-@media screen and (max-width: 768px){	
+@media screen and (max-width: 768px){
 	.inquirySection {
     padding: 20px 0 50px;
     width: 100%;
@@ -2529,13 +2529,13 @@ nav#gnavi #gnaviCol ul.share li.insta img {
 	box-sizing:border-box;
 	font-size: 13px;
 	line-height:1.6em;
-	margin:0 auto;	
-	padding:30px 40px 40px;	
-	text-align:left;	
-	width:960px;	
+	margin:0 auto;
+	padding:30px 40px 40px;
+	text-align:left;
+	width:960px;
 }
 #privacy h2, #law h2{
-	font-size: 18px;	
+	font-size: 18px;
 	font-weight: bold;
 	margin:20px 0 0;
 	padding:0 0 20px;
@@ -2557,12 +2557,12 @@ nav#gnavi #gnaviCol ul.share li.insta img {
 }
 #privacy h2, #law h2{
 	border-bottom: 1px solid #ccc;
-	margin:20px 0 40px;	
+	margin:20px 0 40px;
 }
 #privacy img, #law img{
 	width:auto;
 }
-@media screen and (max-width: 768px){	
+@media screen and (max-width: 768px){
 	#privacy, #law{
 	width:100%;
 	}
