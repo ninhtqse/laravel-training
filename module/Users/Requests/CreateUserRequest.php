@@ -16,14 +16,18 @@ class CreateUserRequest extends ApiRequest
         return [
             'users'        => 'required|array',
             'users.email'  => 'required|email',
+            'users.password'  => 'required',
+            'users.name'  => 'required',
         ];
     }
-
+//chỗ này là để đổi tên hiển thị nè :D
     public function attributes()
     {
         return [
-            'user'              => __('user'),
-            'user.email'        => __('email'),
+            'users'              => __('user'),
+            'users.email'        => __('email'),
+            'users.password'        => __('password'),
+            'users.name'        => __('name'),
         ];
     }
 }

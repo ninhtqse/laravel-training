@@ -17,10 +17,15 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 class User extends Authenticatable implements CanResetPasswordContract
 {
     protected $table = 'users';
-
+    protected $guarded = []; //cái này là để loại đi trường nào nếu không loại đi trường nào thì để mảng rỗng nè
     protected $hidden = [
         'password',
         'remember_token',
-    ];
+    ]; //chỗ này là để không hiển thị 2 trường đã viết ở trong mảng khi get nè
+
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = password_hash($value, PASSWORD_BCRYPT);
+    }// function này là để set defalt sẽ mã hóa trường password khi update hoặc insert nà :D
     
 }
