@@ -3,59 +3,61 @@
     
 <!-- Mirrored from themesground.com/nexus-admin/template3/HTML/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Mar 2021 14:42:54 GMT -->
 <head>
-        <meta charset="UTF-8">
-        <title>Dashboard | Nexus - Responsive Bootstrap Admin Template</title>   
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="description" content="">
-        <meta name="keywords" content="Nexus bootstrap template, Nexus admin, bootstrap,admin template, bootstrap admin,">
-        <meta name="author" content="ThemesGround">
-<base href= "{{asset('admin_html')}}/"/>
-        <!-- Base Css Files -->
-        <link href="assets/libs/jqueryui/ui-lightness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
-        <link href="assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="assets/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-        <link href="assets/libs/fontello/css/fontello.css" rel="stylesheet" />
-        <link href="assets/libs/animate-css/animate.min.css" rel="stylesheet" />
-        <link href="assets/libs/nifty-modal/css/component.css" rel="stylesheet" />
-        <link href="assets/libs/magnific-popup/magnific-popup.css" rel="stylesheet" /> 
-        <link href="assets/libs/ios7-switch/ios7-switch.css" rel="stylesheet" /> 
-        <link href="assets/libs/pace/pace.css" rel="stylesheet" />
-        <link href="assets/libs/sortable/sortable-theme-bootstrap.css" rel="stylesheet" />
-        <link href="assets/libs/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" />
-        <link href="assets/libs/jquery-icheck/skins/all.css" rel="stylesheet" />
-        <!-- Code Highlighter for Demo -->
-        <link href="assets/libs/prettify/github.css" rel="stylesheet" />
-        
-                <!-- Extra CSS Libraries Start -->
- <!-- jvectormap -->
-    <link rel="stylesheet" href="assets/libs/jquery-jvectormap/css/jquery-jvectormap-1.2.2.css">
-    <!-- Date Picker -->
-    <link rel="stylesheet" href="assets/libs/bootstrap-datepicker/css/datepicker.css">
+  <meta charset="UTF-8">
+  <title>Dashboard | Nexus - Responsive Bootstrap Admin Template</title>   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="description" content="">
+  <meta name="keywords" content="Nexus bootstrap template, Nexus admin, bootstrap,admin template, bootstrap admin,">
+  <meta name="author" content="ThemesGround">
+  <base href= "{{asset('admin_html')}}/"/>
+  <!-- Base Css Files -->
+  <link href="assets/libs/jqueryui/ui-lightness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
+  <link href="assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="assets/libs/fontello/css/fontello.css" rel="stylesheet" />
+  <link href="assets/libs/animate-css/animate.min.css" rel="stylesheet" />
+  <link href="assets/libs/nifty-modal/css/component.css" rel="stylesheet" />
+  <link href="assets/libs/magnific-popup/magnific-popup.css" rel="stylesheet" /> 
+  <link href="assets/libs/ios7-switch/ios7-switch.css" rel="stylesheet" /> 
+  <link href="assets/libs/pace/pace.css" rel="stylesheet" />
+  <link href="assets/libs/sortable/sortable-theme-bootstrap.css" rel="stylesheet" />
+  <link href="assets/libs/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" />
+  <link href="assets/libs/jquery-icheck/skins/all.css" rel="stylesheet" />
+  <!-- Code Highlighter for Demo -->
+  <link href="assets/libs/prettify/github.css" rel="stylesheet" />
+  
+          <!-- Extra CSS Libraries Start -->
+<!-- jvectormap -->
+<link rel="stylesheet" href="assets/libs/jquery-jvectormap/css/jquery-jvectormap-1.2.2.css">
+<!-- Date Picker -->
+<link rel="stylesheet" href="assets/libs/bootstrap-datepicker/css/datepicker.css">
 
-    <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="assets/libs/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-       <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-       <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
-                <!-- Extra CSS Libraries End -->
-        <link href="assets/css/style-responsive.css" rel="stylesheet" />
+<!-- bootstrap wysihtml5 - text editor -->
+<link rel="stylesheet" href="assets/libs/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <!-- Extra CSS Libraries Start -->
+          <link href="assets/libs/summernote/summernote.css" rel="stylesheet" type="text/css" />
+ <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+ <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
+          <!-- Extra CSS Libraries End -->
+  <link href="assets/css/style-responsive.css" rel="stylesheet" />
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
 
-        
-        <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
-        <link rel="apple-touch-icon" sizes="57x57" href="assets/img/apple-touch-icon-57x57.png" />
-        <link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72.png" />
-        <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-touch-icon-76x76.png" />
-        <link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-touch-icon-114x114.png" />
-        <link rel="apple-touch-icon" sizes="120x120" href="assets/img/apple-touch-icon-120x120.png" />
-        <link rel="apple-touch-icon" sizes="144x144" href="assets/img/apple-touch-icon-144x144.png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="assets/img/apple-touch-icon-152x152.png" />
+  
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/img/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/img/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/img/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/img/apple-touch-icon-152x152.png" />
     </head>
     <body class="fixed-left">
         <!-- Modal Start -->
@@ -215,12 +217,12 @@
               
                 <div id="sidebar-menu">
   <ul>
-    <li><a href='index-2.html'><i class="fa fa-home"></i> <span>Dashboard</span> </a>
+    <li><a href='{{route('admin')}}'><i class="fa fa-home"></i> <span>Dashboard</span> </a>
     
     
     <li class='has_sub'><a href='javascript:void(0);'><i class="fa fa-check-square-o"></i> <span>User</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
       <ul>
-        <li><a href='forms.html'><span>Form Elements</span></a></li>
+        <li><a href='{{route('get_list_blog')}}'><span>List Blog</span></a></li>
         <li><a href='form-wizard.html'><span>Form Wizard</span></a></li>
         
         <li><a href='form-validation.html'><span>Form Validation</span></a></li>
@@ -273,6 +275,8 @@
 		<!-- the overlay modal element -->
 	<div class="md-overlay"></div>
 	<!-- End of eoverlay modal -->
+	<div class="md-overlay"></div>
+	<!-- End of eoverlay modal -->
 	<script>
 		var resizefunc = [];
 	</script>
@@ -304,7 +308,9 @@
 	<script src="assets/libs/prettify/prettify.js"></script>
 
 	<script src="assets/js/init.js"></script>
-    <script src="assets/js/pages/form-validation.js"></script>
+                    <!-- Page Specific JS Libraries -->
+	<script src="assets/libs/summernote/summernote.js"></script>
+	<script src="assets/js/pages/new-message.js"></script>
 	</body>
 
 <!-- Mirrored from themesground.com/nexus-admin/template3/HTML/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Mar 2021 14:42:55 GMT -->

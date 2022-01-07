@@ -70,4 +70,6 @@ class UserController extends Controller{
         $this->userService->lockUser($id, $active);
         return redirect()->route('admin');
     }
+
+    
 }

@@ -14,7 +14,7 @@ namespace Module\Users\Models;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-class User extends Authenticatable implements CanResetPasswordContract
+class User extends Authenticatable 
 {
     protected $table = 'users';
     protected $guarded = []; //cái này là để loại đi trường nào nếu không loại đi trường nào thì để mảng rỗng nè
