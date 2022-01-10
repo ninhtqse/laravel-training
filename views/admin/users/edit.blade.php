@@ -1,6 +1,7 @@
 @extends('admin.layouts.master')
 @section('content')
-
+    {{-- {{route('edit'), $results->id}} --}}
+    {{-- @dd($results->id) --}}
     <div class="content">
         <div class="row">
             <div class="col-sm-12 portlets">
@@ -13,30 +14,33 @@
                             <a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
                         </div>
                     </div>
-                    {{-- @dd($errors->has('users.name')) --}}
                     <div class="widget-content padding">
-                        <form role="form" id="contactForm" action="{{route('create_user')}}" method="POST" enctype="multipart/form-data">
+                        <form role="form" id="contactForm" action="{{route('edit', $results->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" name="users[name]" >
-                                @if($errors->has('users.name'))
-                                    <p>{{$errors->first('users.name')}}</p>
-                                @endif
+                                <input type="text" class="form-control" name="users[name]" value="{{$results->name}}">
                             </div>
                             <div class="form-group">
                                 <label>Email address</label>
-                                <input type="text" class="form-control" name="users[email]">
+                                <input type="text" class="form-control" name="users[email]" value="{{$results->email}}">
                             </div>
-                            <div class="form-group">
-                                <label>password</label>
-                                <input type="text" class="form-control" name="users[password]">
-                            </div>
+                            {{-- <div class="form-group">
+                              <label>password</label>
+                              <input type="text" class="form-control" name="users[password]" value="{{$results->password}}">
+                            </div> --}}
                             <div class="form-group">
                                 <label>Role</label>
                                 <select class="form-control" name="users[is_admin]">
-                                    <option value="0">Admin</option>
-                                    <option value="1">User</option>
+
+
+                                    @if($results->is_admin == 1)
+                                        <option value="0" selected>Admin</option>
+                                        <option value="1" >User</option>
+                                    @else
+                                        <option value="0">Admin</option>
+                                        <option value="1" selected>User</option>
+                                    @endif
                                 </select>
                             </div>
 

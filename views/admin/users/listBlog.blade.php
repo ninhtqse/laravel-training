@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="toolbar-btn-action">
-                                        <a class="btn btn-success" href="{{ route('get_create') }}" ><i class="fa fa-plus-circle"></i> Add new</a>
+                                        <a class="btn btn-success" href="{{ route('get_create_blog') }}" ><i class="fa fa-plus-circle"></i> Add new</a>
                                         {{-- <a class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</a>
                                         <a class="btn btn-primary"><i class="fa fa-refresh"></i> Update</a> --}}
                                     </div>
@@ -38,41 +38,23 @@
                             <table data-sortable class="table table-hover table-striped">
                                 <thead>
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Full Name</th>
-                                    <th>Location</th>
-                                    <th>Date of birth</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
-                                    <th>Status</th>
-                                    <th data-sortable="false">Option</th>
+                                    <th>No</th>
+                                    <th>Title</th>
+                                    <th>Creator</th>
+
                                 </tr>
                                 </thead>
 
                                 <tbody>
                                 @foreach ($results as $key => $result)
                                     <tr>
-                                        <td>{{$result->id}}</td><td><strong>{{$result->name}}</strong></td>
-                                        <td>Yogyakarta, Indonesia</td><td>January 01, 1985</td>
-                                        <td><a href="mailto:#">{{$result->email}}</a></td>
-
-                                        @if ($result->is_admin == 1)
-                                            <td>Admin</td>
-                                        @else
-                                            <td>User</td>
-                                        @endif
-                                        <td>123</td>
-                                        <td><span class="label label-success">Active</span></td>
+                                        <td>{{++$key}}</td>
+                                        <td><strong>{{$result->title}}</strong></td>
+                                        <td>{{$result->user->name}}</td>
                                         <td>
                                             <div class="btn-group btn-group-xs">
-
-                                                @if ($result->active == 0)
-                                                    <a data-toggle="tooltip" title="Lock User" class="btn btn-default" href="{{route('lock_user', [$result->id, 1])}}"><i class="fa fa-power-off"></i></a>
-                                                @else
-                                                    <a data-toggle="tooltip" title="Active User" class="btn btn-default" href="{{route('lock_user', [$result->id, 0])}}"><i class="fa fa-power-off"></i></a>
-                                                @endif
-                                                <a data-toggle="tooltip" title="Edit" class="btn btn-default" href="{{route('get_edit', $result->id)}}"><i class="fa fa-edit"></i></a>
-                                                <a data-toggle="tooltip" title="Delete" class="btn btn-default" href="{{route('delete_user', $result->id)}}"><i class="fa fa-trash-o"></i></a>
+                                                <a data-toggle="tooltip" title="Edit" class="btn btn-default" href="{{route('get_edit_blog', $result->id)}}"><i class="fa fa-edit"></i></a>
+                                                <a data-toggle="tooltip" title="Delete" class="btn btn-default" href="{{route('delete_blog', $result->id)}}"><i class="fa fa-trash-o"></i></a>
                                             </div>
                                         </td>
                                     </tr>

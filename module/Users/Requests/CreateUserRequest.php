@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Module\Users\Requests;
 
@@ -15,7 +15,10 @@ class CreateUserRequest extends ApiRequest
     {
         return [
             'users'        => 'required|array',
+            'users.name'  => 'required',
             'users.email'  => 'required|email',
+            'users.password'  => 'required',
+            'users.is_admin'  => 'required',
         ];
     }
 
@@ -23,7 +26,10 @@ class CreateUserRequest extends ApiRequest
     {
         return [
             'user'              => __('user'),
+            'user.name'        => __('name'),
             'user.email'        => __('email'),
+            'user.password'        => __('password'),
+            'user.is_admin'        => __('is_admin'),
         ];
     }
 }
