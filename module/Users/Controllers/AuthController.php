@@ -20,8 +20,6 @@ class AuthController extends Controller{
         $email = $request["login"]['email'];
         $password = $request["login"]['password'];
         if (Auth::attempt(['email'=> $email,'password' => $password, 'is_admin'=>1]) ){
-            // User::where('email', $email)->first();
-            // return view('');
             return redirect()->route('admin');
         }else{
             session()->flash('LoginFail', true);

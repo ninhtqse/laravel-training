@@ -222,18 +222,25 @@
     
     <li class='has_sub'><a href='javascript:void(0);'><i class="fa fa-check-square-o"></i> <span>User</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
       <ul>
-        <li><a href='{{route('get_list_blog')}}'><span>List Blog</span></a></li>
-        <li><a href='form-wizard.html'><span>Form Wizard</span></a></li>
-        
-        <li><a href='form-validation.html'><span>Form Validation</span></a></li>
-        <li><a href='form-uploads.html'><span>File Uploads</span></a></li>
+        <li><a href='{{route("admin")}}'><span>List User</span></a></li>
       </ul>
     </li>
     
-    <li class='has_sub'><a href='javascript:void(0);'><i class="fa fa-th"></i> <span>Tables</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span> </a>
+    <li class='has_sub'><a href='javascript:void(0);'><i class="fa fa-th"></i> <span>Category</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span> </a>
       <ul>
-        <li><a href='tables.html'><span>Basic Tables</span></a></li>
-        <li><a href='datatables.html'><span>Data Tables</span></a></li>
+        <li><a href='{{route("get_all_category")}}'><span>List Category</span></a></li>
+      </ul>
+    </li>
+
+    <li class='has_sub'><a href='javascript:void(0);'><i class="fa fa-th"></i> <span>Blog</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span> </a>
+      <ul>
+        <li><a href='{{route("get_list_blog")}}'><span>List Blog</span></a></li>
+      </ul>
+    </li>
+
+    <li class='has_sub'><a href='javascript:void(0);'><i class="fa fa-th"></i> <span>Attribute</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span> </a>
+      <ul>
+        <li><a href='{{route("get_all_attribute")}}'><span>List Attribute</span></a></li>
       </ul>
     </li>
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Module\Users\Controllers;
+namespace Module\Blogs\Controllers;
 
 use Illuminate\Http\Request;
-use Module\Users\Services\BlogService;
+use Module\Blogs\Services\BlogService;
 use Infrastructure\Http\Controller;
 use Illuminate\Support\Facades\Auth;
 

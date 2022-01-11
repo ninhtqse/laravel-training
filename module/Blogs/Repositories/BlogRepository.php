@@ -1,9 +1,9 @@
 <?php 
 
-namespace Module\Users\Repositories;
+namespace Module\Blogs\Repositories;
 
 use Infrastructure\Database\Eloquent\Repository;
-use Module\Users\Models\Blog;
+use Module\Blogs\Models\Blog;
 
 class BlogRepository extends Repository
 {
