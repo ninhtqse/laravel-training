@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<!-- Mirrored from themesground.com/nexus-admin/template3/HTML/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Mar 2021 14:42:54 GMT -->
 <head>
     <meta charset="UTF-8">
     <title>Dashboard | Nexus - Responsive Bootstrap Admin Template</title>
@@ -49,7 +48,6 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
-
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="assets/img/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72.png" />
@@ -63,20 +61,16 @@
 <!-- Modal Start -->
 <!-- Begin page -->
 <div id="wrapper">
-
     <!-- Top Bar Start -->
     <div class="topbar">
         <div class="topbar-left">
             <div class="logo">
                 <h1><a href="index-2.html">Nexus</a></h1>
             </div>
-
         </div>
         <!-- Button mobile view to collapse sidebar menu -->
         <div class="navbar" role="navigation">
-
             <div class="container">
-
                 <div class="navbar-collapse2">
                     <button class="button-menu-mobile open-left">
                         <i class="fa fa-bars"></i>
@@ -129,7 +123,6 @@
                                 <li class="footer"><a href="#">View all</a></li>
                             </ul>
                         </li>
-
                         <li class="dropdown tasks-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-cog" aria-hidden="true"></i>
@@ -213,48 +206,33 @@
     <div class="left side-menu">
         <div class="sidebar-inner slimscrollleft">
             <!--- Profile -->
-
-
             <div id="sidebar-menu">
                 <ul>
                     <li><a href='{{route('admin')}}'><i class="fa fa-home"></i> <span>Dashboard</span> </a>
-
-
                     <li class='has_sub'><a href='javascript:void(0);'><i class="fa fa-check-square-o"></i> <span>User</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
                         <ul>
                             <li><a href='{{route('get_list_blog')}}'><span>List Blog</span></a></li>
                             <li><a href='form-wizard.html'><span>Form Wizard</span></a></li>
-
                             <li><a href='form-validation.html'><span>Form Validation</span></a></li>
                             <li><a href='form-uploads.html'><span>File Uploads</span></a></li>
                         </ul>
                     </li>
-
                     <li class='has_sub'><a href='javascript:void(0);'><i class="fa fa-th"></i> <span>Tables</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span> </a>
                         <ul>
                             <li><a href='tables.html'><span>Basic Tables</span></a></li>
                             <li><a href='datatables.html'><span>Data Tables</span></a></li>
                         </ul>
                     </li>
-
                 </ul>
-
             </div>
-
-
             <div class="sidebar-plan">
                 Bandwidth<a href="#" class="link">60%</a>
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
                     </div>
                 </div>
-
             </div>
-
-
-
         </div>
-
     </div>
     <!-- Left Sidebar End -->
     <!-- Start right content -->
@@ -266,10 +244,8 @@
     <!-- ============================================================== -->
         <!-- End content here -->
         <!-- ============================================================== -->
-
     </div>
     <!-- End right content -->
-
 </div>
 <!-- End of page -->
 <!-- the overlay modal element -->
@@ -312,6 +288,4 @@
 <script src="assets/libs/summernote/summernote.js"></script>
 <script src="assets/js/pages/new-message.js"></script>
 </body>
-
-<!-- Mirrored from themesground.com/nexus-admin/template3/HTML/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Mar 2021 14:42:55 GMT -->
 </html>

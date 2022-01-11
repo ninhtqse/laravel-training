@@ -21,6 +21,7 @@
 
         public function create($user)
         {
+            dd($user);
             $this->userRepository->create($user);
         }
 

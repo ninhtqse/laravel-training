@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
-
-<!-- Mirrored from themesground.com/nexus-admin/template3/HTML/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Mar 2021 14:45:00 GMT -->
 <head>
     <meta charset="UTF-8">
-    <title>Login | Nexus - Responsive Bootstrap Admin Template</title>
+    <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="description" content="">
@@ -38,8 +36,6 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-
-
     <link rel="apple-touch-icon" href="../admin_html/assets/img/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="../admin_html/assets/img/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="../admin_html/assets/img/apple-touch-icon-72x72.png" />
@@ -86,7 +82,6 @@
         </div>
     </div>
 </div>
-
 <!-- Modal Logout -->
 <div class="md-modal md-just-me" id="logout-modal">
     <div class="md-content">
@@ -102,9 +97,6 @@
 </div>        <!-- Modal End -->
 <!-- Begin page -->
 <div class="container">
-    @if(session()->has('LoginFail'))
-        <p class="text-danger text-center" > Đăng nhập thất bại </p>
-    @endif
     <div class="full-content-center">
         <p class="text-center"><a href="#"><img src="../admin_html/assets/img/login-logo.png" alt="Logo"></a></p>
         <div class="login-wrap animated flipInX">
@@ -114,16 +106,18 @@
                     @csrf
                     <div class="form-group login-input">
                         <i class="fa fa-user overlay"></i>
-                        <input type="text" class="form-control text-input" placeholder="Username" name="login[email]">
+                        <input type="text" class="form-control text-input" placeholder="Email" name="login[email]">
                     </div>
                     <div class="form-group login-input">
                         <i class="fa fa-key overlay"></i>
                         <input type="password" class="form-control text-input" placeholder="********" name="login[password]">
                     </div>
-
+                    @if(session()->has('LoginFail'))
+                        <p class="text-danger text-center" >Email or password is incorrect.</p>
+                    @endif
                     <div class="row">
                         <div class="col-sm-6">
-                            <button type="submit" class="btn btn-login btn-block">LOGIN</button>
+                            <button type="submit" class="btn btn-login btn-block">Login</button>
                         </div>
                         <div class="col-sm-6">
                             <a href="register.html" class="btn btn-reg btn-block">Register</a>
@@ -132,7 +126,6 @@
                 </form>
             </div>
         </div>
-
     </div>
 </div>
 <!-- the overlay modal element -->
@@ -170,6 +163,4 @@
 
 <script src="../admin_html/assets/js/init.js"></script>
 </body>
-
-<!-- Mirrored from themesground.com/nexus-admin/template3/HTML/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Mar 2021 14:45:01 GMT -->
 </html>

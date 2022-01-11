@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Infrastructure\Api\Controllers;
 
@@ -8,7 +8,7 @@ use Illuminate\Foundation\Application;
 class DefaultApiController extends BaseController
 {
     private $cookie;
-    
+
     public function __construct(
         Application $app
     ) {
@@ -40,7 +40,7 @@ class DefaultApiController extends BaseController
     private function showLogin(){
         header('WWW-Authenticate: Basic realm="My Realm"');
         header('HTTP/1.0 401 Unauthorized');
-        echo 'Text to send if user hits Cancel button';
+        echo 'Text to send if users hits Cancel button';
         exit;
     }
 }

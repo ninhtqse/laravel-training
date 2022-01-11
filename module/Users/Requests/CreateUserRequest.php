@@ -25,11 +25,11 @@ class CreateUserRequest extends ApiRequest
     public function attributes()
     {
         return [
-            'user'              => __('user'),
-            'user.name'        => __('name'),
-            'user.email'        => __('email'),
-            'user.password'        => __('password'),
-            'user.is_admin'        => __('is_admin'),
+            'users'              => __('users'),
+            'users.name'        => __('name'),
+            'users.email'        => __('email'),
+            'users.password'        => __('password'),
+            'users.is_admin'        => __('is_admin'),
         ];
     }
 }

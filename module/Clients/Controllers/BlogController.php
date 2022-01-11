@@ -8,6 +8,6 @@
     {
         public function index()
         {
-            return view('client.blogs.blog');
+            return view('client.blogs.blogs');
         }
     }

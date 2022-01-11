@@ -1,6 +1,6 @@
 <?php
 
-    namespace Module\Users\Requests;
+    namespace Module\Auths\Requests;
 
     use Infrastructure\Http\ApiRequest;
 

@@ -7,7 +7,6 @@
         $router->post('/edit/{id}', 'UserController@edit')->name('edit');
         $router->get('/delete/{id}', 'UserController@delete')->name('delete_user');
         $router->get('/lockUser/{id}/{active}', 'UserController@lockUser')->name('lock_user');
-        $router->get('/logout','AuthController@logout')->name('logout');
         $router->get('/createBlog','BlogController@getCreate')->name('get_create_blog');
         $router->post('/createBlog','BlogController@create')->name('create_blog');
         $router->get('/listBlog','BlogController@getAll')->name('get_list_blog');

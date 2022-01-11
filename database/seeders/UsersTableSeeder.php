@@ -18,7 +18,7 @@
             $user = new User();
             $user->email = 'admin@gmail.com';
             $user->name = 'Admin';
-            $user->password = bcrypt(123456);
+            $user->password = '123456';
             $user->is_admin = 1;
             $user->save();
 

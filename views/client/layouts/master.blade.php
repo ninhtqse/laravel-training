@@ -1777,7 +1777,7 @@
                         f = new PerformanceObserver(i);
                         try {
                             f.observe({
-                                type: "layout-shift",
+                                type: "layouts-shift",
                                 buffered: !0
                             })
                         } catch (m) {}

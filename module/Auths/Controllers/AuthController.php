@@ -1,21 +1,20 @@
 <?php
 
-    namespace Module\Users\Controllers;
+    namespace Module\Auths\Controllers;
 
     use Illuminate\Support\Facades\Auth;
-    use Module\Users\Requests\LoginRequest;
+    use Module\Auths\Requests\LoginRequest;
     use Infrastructure\Http\Controller;
 
     class AuthController extends Controller{
 
-        public function login()
+        public function getLogin()
         {
             return view('admin.login.login');
         }
 
         public function postLogin(LoginRequest $request)
         {
-//            dd(bcrypt(123456));
             $credentials = [
                 'email' => $request['login']['email'],
                 'password' => $request['login']['password'],

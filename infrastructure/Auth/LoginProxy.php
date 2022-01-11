@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Infrastructure\Auth;
 
@@ -24,7 +24,7 @@ class LoginProxy
     }
 
     /**
-     * Attempt to create an access token using user credentials
+     * Attempt to create an access token using users credentials
      *
      * @param string $taxCode
      * @param string $email
@@ -78,7 +78,7 @@ class LoginProxy
     }
 
     /**
-     * Logs out the user. We revoke access token and refresh token.
+     * Logs out the users. We revoke access token and refresh token.
      * Also instruct the client to forget the refresh cookie.
      */
     public function logout()

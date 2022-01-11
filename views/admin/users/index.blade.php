@@ -1,9 +1,7 @@
 @extends('admin.layouts.master')
 @section('content')
-
     <div class="content">
         <!-- Your awesome content goes here -->
-
         <div class="row">
             <div class="col-md-12">
                 <div class="widget">
