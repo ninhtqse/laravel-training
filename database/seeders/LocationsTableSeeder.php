@@ -18,48 +18,48 @@
             $arrayProvince = $data['province'];
             $arrayDistrict = $data['district'];
             $arrayCommune = $data['commune'];
-            $i = 1;
-            $array = [];
-            $array1 = [];
-            $array2 = [];
-            $array3 = [];
-            $array4 = [];
+            $id = 1;
+            $dataIdProvince = [];
+            $dataProvince = [];
+            $dataDistrict = [];
+            $dataIdDistrict = [];
+            $dataCommune = [];
             foreach ($arrayProvince as $province) {
-                $array1[] = [
-                    'id' => $i,
+                $dataProvince[] = [
+                    'id' => $id,
                     'name' => $province['name'],
                     'type' => 1,
                     'code' => $province['idProvince'],
                 ];
-                $array[$province['idProvince']] = $i;
-                $i++;
+                $dataIdProvince[$province['idProvince']] = $id;
+                $id++;
             }
-            \DB::table('locations')->insert($array1);
+            \DB::table('locations')->insert($dataProvince);
             foreach ($arrayDistrict as $district) {
-                $parentId = $array[$district['idProvince']];
-                $array2[] = [
-                    'id' => $i,
+                $parentId = $dataIdProvince[$district['idProvince']];
+                $dataDistrict[] = [
+                    'id' => $id,
                     'name' => $district['name'],
                     'type' => 2,
                     'code' => $district['idDistrict'],
                     'parent_id' => $parentId,
                 ];
-                $array3[$district['idDistrict']] = $i;
-                $i++;
+                $dataIdDistrict[$district['idDistrict']] = $id;
+                $id++;
             }
-            \DB::table('locations')->insert($array2);
+            \DB::table('locations')->insert($dataDistrict);
             foreach ($arrayCommune as $commune) {
-                $parentId = $array3[$commune['idDistrict']];
-                $array4[] = [
-                    'id' => $i,
+                $parentId = $dataIdDistrict[$commune['idDistrict']];
+                $dataCommune[] = [
+                    'id' => $id,
                     'name' => $commune['name'],
                     'type' => 3,
                     'code' => $commune['idCommune'],
                     'parent_id' => $parentId,
                 ];
-                $i++;
+                $id++;
             }
-            foreach (array_chunk($array4, 3000) as $item){
+            foreach (array_chunk($dataCommune, 3000) as $item){
                 \DB::table('locations')->insert($item);
             }
         }

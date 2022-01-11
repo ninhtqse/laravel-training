@@ -15,6 +15,7 @@
 
         public function postLogin(LoginRequest $request)
         {
+//            dd(bcrypt(123456));
             $credentials = [
                 'email' => $request['login']['email'],
                 'password' => $request['login']['password'],
