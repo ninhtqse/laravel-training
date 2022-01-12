@@ -8,7 +8,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Routing\Route;
 use Closure;
 
-class CheckAuthenticateSession extends Authenticate
+class CheckAuthenticateSession
 {
     public function __construct(
         Route $route,
@@ -22,7 +22,7 @@ class CheckAuthenticateSession extends Authenticate
         $this->helperFunction = $helperFunction;
     }
 
-    public function handle($request, Closure $next, $scopesString = null)
+    public function handle($request, Closure $next)
     {
         if(\Auth::check()){
             return $next($request);
