@@ -27,5 +27,10 @@ class ProductService
         return $data;
     }
 
+    public function editCategoryId($productId, $categoryId)
+    {
+        $this->productRepository->getModel()->where('id', $productId)->update($categoryId);
+    }
+
 
 }

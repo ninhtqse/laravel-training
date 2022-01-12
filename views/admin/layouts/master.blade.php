@@ -318,6 +318,8 @@
                     <!-- Page Specific JS Libraries -->
 	<script src="assets/libs/summernote/summernote.js"></script>
 	<script src="assets/js/pages/new-message.js"></script>
+
+  @yield('js')
 	</body>
 
 <!-- Mirrored from themesground.com/nexus-admin/template3/HTML/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Mar 2021 14:42:55 GMT -->

@@ -31,4 +31,11 @@ class ProductDetailService
         return $data;
     }
 
+    public function edit($products, $id)
+    {
+        $item = $this->productDetailRepository->getById($id);
+        $data = $item->update($products);
+        return $data;
+    }
+
 }
