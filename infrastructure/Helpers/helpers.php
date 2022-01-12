@@ -1,4 +1,6 @@
 <?php
+
+if (!function_exists('h_paginate')) {
     function h_paginate($jobs){
         $html = '';
         if ($jobs->hasPages()){
@@ -25,3 +27,4 @@
         }
         return $html;
     }
+}
