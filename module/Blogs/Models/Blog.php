@@ -1,5 +1,5 @@
 <?php
-    namespace Module\Users\Models;
+    namespace Module\Blogs\Models;
 
     use Illuminate\Database\Eloquent\Model;
     use module\Users\Models\User;

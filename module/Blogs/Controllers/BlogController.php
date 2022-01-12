@@ -1,9 +1,9 @@
 <?php
 
-    namespace Module\Users\Controllers;
+    namespace Module\Blogs\Controllers;
 
     use Illuminate\Http\Request;
-    use Module\Users\Services\BlogService;
+    use Module\Blogs\Services\BlogService;
     use Infrastructure\Http\Controller;
     use Illuminate\Support\Facades\Auth;
 
@@ -18,7 +18,7 @@
 
         public function getCreate()
         {
-            return view('admin.users.createBlog');
+            return view('admin.blogs.createBlog');
         }
 
         public function create(Request $request)
@@ -32,14 +32,14 @@
         public function getAll()
         {
             $results = $this->blogService->getAll();
-            return view('admin.users.listBlog', compact('results'));
+            return view('admin.blogs.listBlog', compact('results'));
 
         }
 
         public function showEdit($id)
         {
             $results = $this->blogService->showEdit($id);
-            return view('admin.users.editBlog', compact('results'));
+            return view('admin.blogs.editBlog', compact('results'));
 
         }
 

@@ -20,6 +20,7 @@
             $user->name = 'Admin';
             $user->password = '123456';
             $user->is_admin = 1;
+            $user->is_locked = 0;
             $user->save();
 
         }

@@ -1,8 +1,8 @@
 <?php
 
-    namespace Module\Users\Services;
+    namespace Module\Blogs\Services;
 
-    use Module\Users\Repositories\BlogRepository;
+    use Module\Blogs\Repositories\BlogRepository;
 
     class BlogService
     {

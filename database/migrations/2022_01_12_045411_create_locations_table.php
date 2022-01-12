@@ -14,11 +14,11 @@ class CreateLocationsTable extends Migration
     public function up()
     {
         Schema::create('locations', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary()->index()->comment('uuid gen auto in code');
             $table->string('name');
             $table->integer('type');
             $table->string('code');
-            $table->integer('parent_id')->nullable();
+            $table->uuid('parent_id')->index()->nullable();
             $table->timestamps();
         });
     }

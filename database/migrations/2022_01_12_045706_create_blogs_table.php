@@ -14,10 +14,10 @@ class CreateBlogsTable extends Migration
     public function up()
     {
         Schema::create('blogs', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary()->index()->comment('uuid gen auto in code');
             $table->longText('title');
             $table->longText('content');
-            $table->uuid('user_id')->primary()->index();
+            $table->uuid('user_id')->index();
             $table->timestamps();
         });
     }
