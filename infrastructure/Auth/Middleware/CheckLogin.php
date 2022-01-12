@@ -8,7 +8,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Routing\Route;
 use Closure;
 
-class CheckLogin extends Authenticate
+class CheckLogin
 {
     public function __construct(
         Route $route,
@@ -22,7 +22,7 @@ class CheckLogin extends Authenticate
         $this->helperFunction = $helperFunction;
     }
 
-    public function handle($request, Closure $next, $scopesString = null)
+    public function handle($request, Closure $next)
     {
         if(\Auth::check()){
             return redirect('/admin/dashboard');
