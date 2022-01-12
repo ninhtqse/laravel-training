@@ -17,7 +17,7 @@ class CreateTableLoctionsTable extends Migration
             $table->id();
             $table->string('name');
             $table->integer('parent_code')->nullable();
-            $table->integer('code');
+            $table->integer('code')->nullable();
             $table->timestamps();
         });
     }
