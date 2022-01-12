@@ -18,7 +18,7 @@ class BlogController extends Controller
 
     public function getCreate()
     {
-        return view('admin.users.createBlog');
+        return view('admin.blogs.create');
     }
 
     public function create(Request $request)
@@ -32,14 +32,14 @@ class BlogController extends Controller
     public function getAll()
     {
         $results = $this->blogService->getAll();
-        return view('admin.users.listBlog', compact('results'));
+        return view('admin.blogs.list', compact('results'));
 
     }
 
     public function showEdit($id)
     {
         $results = $this->blogService->showEdit($id);
-        return view('admin.users.editBlog', compact('results'));
+        return view('admin.blogs.edit', compact('results'));
 
     }
 

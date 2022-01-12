@@ -31,7 +31,7 @@ class CategoryController extends Controller
     public function getAll()
     {
         $results = $this->categoryService->getAll();
-        return view('admin.categories.listCategory', compact('results'));
+        return view('admin.categories.list', compact('results'));
     }
 
     public function showEdit($id)
