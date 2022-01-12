@@ -1,4 +1,13 @@
 @extends('admin.layouts.master')
+@section('css')
+    <style>
+        .variant{
+            border-style: solid;
+            border-color: green;
+            margin-top: 10px;
+        }
+    </style>
+@endsection
 @section('content')
 
     <div class="content">
@@ -32,6 +41,7 @@
                             </div>
 
                             <div class="variant row">
+
                                 @foreach ($attributes as $attribute)
                                     <div class="form-group col-lg-6">
                                         <label>{{$attribute->name}}</label>
@@ -55,11 +65,14 @@
                                     <input type="text" class="form-control" name="product_details[1][description]">
                                 </div>
                                 <div class="col-lg-6">
-                                    <p class="add_variant" style="background:red;width:30px;height:30px;border-radius:5px;color:white;font-size:18px;text-align:center;line-height:30px;cursor:pointer;font-weight:bold">+</p>
+                                    <p class="delete_variant" style="background:green;width:30px;height:30px;border-radius:5px;color:white;font-size:18px;text-align:center;line-height:30px;cursor:pointer;font-weight:bold">-</p>
                                 </div>
                             </div>
                             <div class="append">
 
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="add_variant" style="background:red;width:30px;height:30px;border-radius:5px;color:white;font-size:18px;text-align:center;line-height:30px;cursor:pointer;font-weight:bold">+</p>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
@@ -77,7 +90,7 @@
     <script>
         $(document).ready(function(){
             $('.add_variant').click(function(){
-                let count = $('.variant').length + 1;
+                let count = uuidv4();
                 let html =
                     `<div class="variant row">`+
                     <?php
@@ -104,11 +117,26 @@
               <label>Description</label>
               <input type="text" class="form-control" name="product_details[${count}][description]">
           </div>
+          <div class="col-lg-6">
+                                <p class="delete_variant" style="background:green;width:30px;height:30px;border-radius:5px;color:white;font-size:18px;text-align:center;line-height:30px;cursor:pointer;font-weight:bold">-</p>
+                            </div>
       </div>`;
 
 
                 $('.append').append(html)
+
+
             });
-        })
+            $('body').on('click','.delete_variant',function(){
+                $(this).parents('.variant').remove();
+            })
+        });
+
+        function uuidv4() {
+            return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+                (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+            );
+        }
+
     </script>
 @endsection
