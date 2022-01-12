@@ -13,9 +13,11 @@ namespace Module\Users\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-
+use Infrastructure\Database\Traits\Uuids;
 class User extends Authenticatable 
 {
+    use Uuids;
+    protected $keyType = 'string';
     protected $table = 'users';
     protected $guarded = []; //cái này là để loại đi trường nào nếu không loại đi trường nào thì để mảng rỗng nè
     protected $hidden = [
