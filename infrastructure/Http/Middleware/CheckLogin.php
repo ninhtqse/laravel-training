@@ -1,6 +1,6 @@
 <?php
 
-    namespace Infrastructure\Auth\Middleware;
+    namespace Infrastructure\Http\Middleware;
 
     use Illuminate\Auth\Middleware\Authenticate;
     use Infrastructure\Libraries\HelperFunction;
@@ -8,7 +8,7 @@
     use Illuminate\Routing\Route;
     use Closure;
 
-    class CheckLogin extends Authenticate
+    class CheckLogin
     {
         public function __construct(
             Route $route,
@@ -22,7 +22,7 @@
             $this->helperFunction = $helperFunction;
         }
 
-        public function handle($request, Closure $next, $scopesString = null)
+        public function handle($request, Closure $next)
         {
             if(\Auth::check()){
                 return redirect('/admin/dashboard');
