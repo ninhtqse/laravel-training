@@ -84,7 +84,7 @@
                         </div>
 
                         <div class="data-table-toolbar">
-                            {!!h_paginate($results)!!}
+                            {!!@h_paginate($results)!!}
                         </div>
                     </div>
                 </div>
