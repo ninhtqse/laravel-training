@@ -25,7 +25,7 @@ class AccessTokenChecker
         $this->helperFunction = $helperFunction;
     }
 
-    public function handle($request, Closure $next, $scopesString = null)
+    public function handle($request, Closure $next)
     {
         if ($this->app->environment() !== 'testing') {
             try {
