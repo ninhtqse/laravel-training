@@ -28,15 +28,15 @@
             "Infrastructure\\": "infrastructure/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "infrastructure/Helpers/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        },
-        "files": [
-            "/infrastructure/Helpers/helpers.php"
-        ]
+        }
     },
     "scripts": {
         "post-autoload-dump": [
