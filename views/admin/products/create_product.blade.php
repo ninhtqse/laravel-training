@@ -45,7 +45,7 @@
                                 @foreach ($attributes as $attribute)
                                     <div class="form-group col-lg-6">
                                         <label>{{$attribute->name}}</label>
-                                        <input type="text" class="form-control" name="attribute_products[1][{{$attribute->name}}]">
+                                        <input type="text" class="form-control" name="attribute_products[1][{{$attribute->id}}]">
                                     </div>
                                 @endforeach
                                 <div class="form-group col-lg-6">
@@ -97,7 +97,7 @@
                     foreach ($attributes as $attribute){ ?>
                     `<div class="form-group col-lg-6">
               <label>`+`<?php echo $attribute->name; ?>`+`</label>
-              <input type="text" class="form-control" name="attribute_products[${count}][<?php echo $attribute->name; ?>]">
+              <input type="text" class="form-control" name="attribute_products[${count}][<?php echo $attribute->id; ?>]">
           </div>`+
                     <?php } ?>
                     `

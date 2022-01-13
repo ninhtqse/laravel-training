@@ -41,13 +41,10 @@ class ProductController extends Controller
 
     public function create(Request $request)
     {
-//        dd($request->all());
-        $product = $request['products'];
-        dd($product);
-//        $product_details = $request['product_details'];
-//        $product_details['product_id'] = $products['id'];
-        $this->productService->create($product);
-//        $this->productDetailService->create($product_details);
+        $products = $request['products'];
+        $productDetails = $request['product_details'];
+        $attributeProducts = $request['attribute_products'];
+        $this->productService->create($products, $productDetails, $attributeProducts);
         return redirect()->route('get_product');
     }
 
