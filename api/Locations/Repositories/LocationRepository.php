@@ -1,14 +1,14 @@
 <?php
 
-    namespace Api\Locations\Repositories;
+namespace Api\Locations\Repositories;
 
-    use Infrastructure\Database\Eloquent\Repository;
-    use Api\Locations\Models\Location;
+use Infrastructure\Database\Eloquent\Repository;
+use Api\Locations\Models\Location;
 
-    class LocationRepository extends Repository
+class LocationRepository extends Repository
+{
+    public function getModel()
     {
-        public function getModel()
-        {
-            return new Location();
-        }
+        return new Location();
     }
+}
