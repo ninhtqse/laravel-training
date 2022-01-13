@@ -41,9 +41,9 @@ class ProductController extends Controller
 
     public function create(Request $request)
     {
-        $products = $request['products'];
-        $productDetails = $request['product_details'];
-        $attributeProducts = $request['attribute_products'];
+        $products           = $request->products;
+        $productDetails     = $request->product_details;
+        $attributeProducts  = $request->attribute_products;
         $this->productService->create($products, $productDetails, $attributeProducts);
         return redirect()->route('get_product');
     }

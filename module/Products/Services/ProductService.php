@@ -3,12 +3,15 @@
 namespace Module\Products\Services;
 
 use Module\Products\Repositories\AttributeProductRepository;
+use Module\Products\Repositories\ProductDetailRepository;
 use Module\Products\Repositories\AttributeRepository;
 use Module\Products\Repositories\ProductRepository;
-use Module\Products\Repositories\ProductDetailRepository;
+use Infrastructure\Libraries\HelperFunction;
 
 class ProductService
 {
+    protected $helperFunction;
+
     protected $productRepository;
 
     protected $productDetailRepository;
@@ -18,16 +21,18 @@ class ProductService
     protected $attributeProductRepository;
 
     public function __construct(
+        HelperFunction $helperFunction,
         ProductRepository $productRepository,
         ProductDetailRepository $productDetailRepository,
         AttributeRepository $attributeRepository,
         AttributeProductRepository $attributeProductRepository
     )
     {
-        $this->productRepository =  $productRepository;
-        $this->productDetailRepository =  $productDetailRepository;
-        $this->attributeRepository =  $attributeRepository;
-        $this->attributeProductRepository =  $attributeProductRepository;
+        $this->helperFunction               = $helperFunction;
+        $this->productRepository            =  $productRepository;
+        $this->productDetailRepository      =  $productDetailRepository;
+        $this->attributeRepository          =  $attributeRepository;
+        $this->attributeProductRepository   =  $attributeProductRepository;
     }
 
     public function create($products, $productDetails, $attributeProducts)
@@ -40,7 +45,9 @@ class ProductService
             foreach ($productDetails as $key => $productDetail) {
                 $productDetail['product_id'] = $product->id;
                 $productDetail['id']         = (string)\Str::uuid();
+                $productDetail = $this->helperFunction->saveImage($productDetail,'images');
                 $productDetailData[] = $productDetail;
+                dd($attributeProducts);
                 foreach ($attributeProducts[$key] as $k => $attributeProduct){
                     $attributeProductData[] = [
                         'id' => (string)\Str::uuid(),
