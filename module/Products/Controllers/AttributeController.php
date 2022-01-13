@@ -17,7 +17,7 @@ class AttributeController extends Controller
 
     public function getCreate()
     {
-        return view('admin.attributes.create');
+        return view('admin.products.create_attribute');
     }
 
     public function create(Request $request)
@@ -30,13 +30,13 @@ class AttributeController extends Controller
     public function getAll()
     {
         $results = $this->attributeService->getAll();
-        return view('admin.attributes.list', compact('results'));
+        return view('admin.products.list_attribute', compact('results'));
     }
 
     public function showEdit($id)
     {
         $results = $this->attributeService->showEdit($id);
-        return view('admin.attributes.edit', compact('results'));
+        return view('admin.products.edit_attribute', compact('results'));
 
     }
 

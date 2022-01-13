@@ -41,13 +41,13 @@ class ProductController extends Controller
 
     public function create(Request $request)
     {
-        dd($request->all());
-        $products = $request['products'];
-        $products['id'] = (string)\Str::uuid();
-        $product_details = $request['product_details'];
-        $product_details['product_id'] = $products['id'];
-        $this->productService->create($products);
-        $this->productDetailService->create($product_details);
+//        dd($request->all());
+        $product = $request['products'];
+        dd($product);
+//        $product_details = $request['product_details'];
+//        $product_details['product_id'] = $products['id'];
+        $this->productService->create($product);
+//        $this->productDetailService->create($product_details);
         return redirect()->route('get_product');
     }
 

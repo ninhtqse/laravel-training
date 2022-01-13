@@ -16,7 +16,7 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->uuid('id')->primary()->index()->comment('uuid gen auto in code');
             $table->string('name');
-            $table->uuid('parent_id')->index();
+            $table->uuid('parent_id')->index()->nullable();
             $table->timestamps();
         });
     }

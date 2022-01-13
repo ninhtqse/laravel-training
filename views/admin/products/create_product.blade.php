@@ -37,7 +37,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" name="product_details[name]">
+                                <input type="text" class="form-control" name="products[name]">
                             </div>
 
                             <div class="variant row">
@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label>Image</label>
-                                    <input type="text" class="form-control" name="product_details[1][image]">
+                                    <input type="text" class="form-control" name="product_details[1][images]">
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label>Quantity</label>
@@ -107,7 +107,7 @@
           </div>
           <div class="form-group col-lg-6">
               <label>Image</label>
-              <input type="text" class="form-control" name="product_details[${count}][image]">
+              <input type="text" class="form-control" name="product_details[${count}][images]">
           </div>
           <div class="form-group col-lg-6">
               <label>Quantity</label>
@@ -118,8 +118,8 @@
               <input type="text" class="form-control" name="product_details[${count}][description]">
           </div>
           <div class="col-lg-6">
-                                <p class="delete_variant" style="background:green;width:30px;height:30px;border-radius:5px;color:white;font-size:18px;text-align:center;line-height:30px;cursor:pointer;font-weight:bold">-</p>
-                            </div>
+              <p class="delete_variant" style="background:green;width:30px;height:30px;border-radius:5px;color:white;font-size:18px;text-align:center;line-height:30px;cursor:pointer;font-weight:bold">-</p>
+          </div>
       </div>`;
 
 

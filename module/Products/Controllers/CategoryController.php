@@ -18,7 +18,7 @@ class CategoryController extends Controller
     public function getCreate()
     {
         $results = $this->categoryService->getAll();
-        return view('admin.categories.create', compact('results'));
+        return view('admin.products.create_category', compact('results'));
     }
 
     public function create(Request $request)
@@ -31,14 +31,14 @@ class CategoryController extends Controller
     public function getAll()
     {
         $results = $this->categoryService->getAll();
-        return view('admin.categories.list', compact('results'));
+        return view('admin.products.list_category', compact('results'));
     }
 
     public function showEdit($id)
     {
         $results = $this->categoryService->showEdit($id);
         $all = $this->categoryService->getAll();
-        return view('admin.categories.edit', compact('results', 'all'));
+        return view('admin.products.edit_category', compact('results', 'all'));
 
     }
 
