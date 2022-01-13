@@ -5,6 +5,7 @@ namespace Module\Products\Controllers;
 use Illuminate\Http\Request;
 use Module\Products\Services\ProductService;
 use Module\Products\Services\ProductDetailService;
+use Module\Products\Services\AttributeProductService;
 use Infrastructure\Http\Controller;
 use Illuminate\Support\Facades\Auth;
 use Module\Categories\Services\CategoryService;
@@ -19,17 +20,21 @@ class ProductController extends Controller
 
     protected $attributeService;
 
+    protected $attributeProductService;
+
     public function __construct(
         ProductService $productService, 
         CategoryService $categoryService, 
         ProductDetailService $productDetailService,
-        AttributeService $attributeService
+        AttributeService $attributeService,
+        AttributeProductService $attributeProductService
     )
     {
         $this->productService       = $productService;
         $this->categoryService      = $categoryService;
         $this->productDetailService = $productDetailService;
         $this->attributeService     = $attributeService;
+        $this->attributeProductService = $attributeProductService;
     }
 
     public function getCreate()
@@ -41,36 +46,38 @@ class ProductController extends Controller
 
     public function create(Request $request)
     {
-        dd($request->all());
         $products = $request['products'];
-        $products['id'] = (string)\Str::uuid();
-        $product_details = $request['product_details'];
-        $product_details['product_id'] = $products['id'];
-        $this->productService->create($products);
-        $this->productDetailService->create($product_details);
-        return redirect()->route('get_product');
+        $productDetail = $request['product_details'];
+        $name = $request['product_details']['name'];
+        unset($productDetail['name']);
+        $attributeProduct = $request['attribute_products'];
+        $this->productService->create($products, $name, $productDetail, $attributeProduct);
+        return 'abcxyz';
+        
     }
 
     public function getAll()
     {
-        $results = $this->productDetailService->getAll();
-        return view('admin.products.list', compact('results'));
+        $result = $this->productService->getAll();
+        dd($result->product);
+        // return $result->;
     }
    
-    public function getEdit($id)
-    {
-        $result = $this->productDetailService->getById($id);
-        $categories = $this->categoryService->getAll();
-        return view('admin.products.edit', compact('result', 'categories'));
-    }
+    
+    // public function getEdit($id)
+    // {
+    //     $result = $this->productDetailService->getById($id);
+    //     $categories = $this->categoryService->getAll();
+    //     return view('admin.products.edit', compact('result', 'categories'));
+    // }
 
-    public function edit(Request $request, $id)
-    {
-        $products = $request['products'];
-        $this->categoryService->edit($products, $id);
-        $this->productDetailService->editCategoryId();
-        return redirect()->route('get_all_attribute');
-    }
+    // public function edit(Request $request, $id)
+    // {
+    //     $products = $request['products'];
+    //     $this->categoryService->edit($products, $id);
+    //     $this->productDetailService->editCategoryId();
+    //     return redirect()->route('get_all_attribute');
+    // }
 
 
     

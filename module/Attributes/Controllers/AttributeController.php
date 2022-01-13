@@ -25,6 +25,13 @@ class AttributeController extends Controller
         $attributes = $request['attributes'];
         $this->attributeService->create($attributes);
         return redirect()->route('get_all_attribute');
+
+        // arr
+        // for(product_details as key=> value){
+        //     arr[key] = 
+        // }
+
+        
     }
 
     public function getAll()
