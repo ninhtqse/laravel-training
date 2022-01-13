@@ -5,6 +5,7 @@ namespace Module\Products\Services;
 use Module\Products\Repositories\ProductRepository;
 use Module\Products\Repositories\ProductDetailRepository;
 use Module\Products\Repositories\AttributeProductRepository;
+use Infrastructure\Libraries\HelperFunction;
 
 class ProductService
 {
@@ -14,7 +15,11 @@ class ProductService
 
     protected $attributeProductRepository;
 
+    protected $helperFunction;
+
+
     public function __construct(
+        HelperFunction $helperFunction,
         ProductRepository $productRepository, 
         ProductDetailRepository $productDetailRepository, 
         AttributeProductRepository  $attributeProductRepository
@@ -23,6 +28,7 @@ class ProductService
         $this->productRepository =  $productRepository;
         $this->productDetailRepository =  $productDetailRepository;
         $this->attributeProductRepository =  $attributeProductRepository;
+        $this->helperFunction =  $helperFunction;
     }
 
     public function create($products, $name, $productDetail,$attributeProduct)
@@ -39,6 +45,7 @@ class ProductService
                 $value['name'] = $name;
                 $value['product_id']    = $product->id;
                 $value['id']            = (string)\Str::uuid();
+                $value = $this->helperFunction->saveImage($value,'image');
                 $product_details[]      = $value;
 
                 foreach($attributeProduct[$key] as $k=>$item){
@@ -64,7 +71,6 @@ class ProductService
     public function getAll()
     {
         $data = $this->productDetailRepository->get();
-        // dd($data->)
         return $data;
     }
 
@@ -72,6 +78,8 @@ class ProductService
     {
         $this->productRepository->getModel()->where('id', $productId)->update($categoryId);
     }
+
+    
 
 
 }

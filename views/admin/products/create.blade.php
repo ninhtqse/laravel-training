@@ -54,7 +54,7 @@
                             </div>
                             <div class="form-group col-lg-6">
                                 <label>Image</label>
-                                <input type="text" class="form-control" name="product_details[1][image]">
+                                <input type="file" class="form-control" name="product_details[1][image]">
                             </div>
                             <div class="form-group col-lg-6">
                                 <label>Quantity</label>
@@ -107,7 +107,7 @@
           </div>
           <div class="form-group col-lg-6">
               <label>Image</label>
-              <input type="text" class="form-control" name="product_details[${count}][image]">
+              <input type="file" class="form-control" name="product_details[${count}][image]">
           </div>
           <div class="form-group col-lg-6">
               <label>Quantity</label>
