@@ -1,16 +1,19 @@
 <?php
 
-    namespace Api\Locations\Models;
+namespace Api\Locations\Models;
 
-    use Illuminate\Database\Eloquent\Model;
-    use Module\Users\Models\User;
+use Infrastructure\Database\Eloquent\Model;
+use Infrastructure\Database\Traits\Uuids;
+use Module\Users\Models\User;
 
-    class Location extends Model
+class Location extends Model
+{
+    use Uuids;
+
+    protected $guarded = [];
+
+    public function user()
     {
-        protected $guarded = [];
-
-        public function user()
-        {
-            return $this->belongsTo(User::class);
-        }
+        return $this->belongsTo(User::class);
     }
+}

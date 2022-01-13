@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Infrastructure\Database\Eloquent;
 
@@ -7,6 +7,10 @@ use DateTimeInterface;
 
 abstract class Model extends BaseModel
 {
+    protected $keyType = 'string';
+
+    public $incrementing = false;
+
     protected function serializeDate(DateTimeInterface $date)
     {
         return date('Y-m-d H:i:s',strtotime($date));

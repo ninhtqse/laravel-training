@@ -1,17 +1,20 @@
 <?php
-    namespace Module\Blogs\Models;
 
-    use Illuminate\Database\Eloquent\Model;
-    use module\Users\Models\User;
+namespace Module\Blogs\Models;
 
-    class Blog extends Model
+use Infrastructure\Database\Eloquent\Model;
+use Infrastructure\Database\Traits\Uuids;
+use module\Users\Models\User;
+
+class Blog extends Model
+{
+    use Uuids;
+
+    protected $guarded = [];
+
+    public function user()
     {
-        protected $table = 'blogs';
-        protected $guarded = [];
-
-        public function user()
-        {
-            return $this->belongsTo(User::class);
-        }
+        return $this->belongsTo(User::class);
     }
+}
 

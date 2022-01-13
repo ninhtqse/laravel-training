@@ -1,15 +1,15 @@
 <?php
 namespace Module\Products\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Infrastructure\Database\Eloquent\Model;
+use Infrastructure\Database\Traits\Uuids;
 use Module\Products\Models\Category;
 
 class Product extends Model
 {
-    protected $table = 'products';
+    use Uuids;
+
     protected $guarded = [];
-
-
 
     public function category()
     {
