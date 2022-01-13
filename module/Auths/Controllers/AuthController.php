@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use Module\Auths\Requests\LoginRequest;
 use Infrastructure\Http\Controller;
 
-class AuthController extends Controller{
+class AuthController extends Controller
+{
 
     public function getLogin()
     {
@@ -32,4 +33,5 @@ class AuthController extends Controller{
         Auth::logout();
         return redirect()->route('login');
     }
+
 }

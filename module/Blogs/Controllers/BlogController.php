@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
+
     protected $blogService;
 
     public function __construct(BlogService $blogService)
@@ -18,14 +19,14 @@ class BlogController extends Controller
 
     public function getAll()
     {
-        $results = $this->blogService->getAll();
-        return view('admin.blogs.listBlog', compact('results'));
+        $blogs = $this->blogService->getAll();
+        return view('admin.blogs.list', compact('blogs'));
 
     }
 
     public function getCreate()
     {
-        return view('admin.blogs.createBlog');
+        return view('admin.blogs.create');
     }
 
     public function create(Request $request)
@@ -36,12 +37,10 @@ class BlogController extends Controller
         return redirect()->route('get_list_blog');
     }
 
-
-
-    public function showEdit($id)
+    public function getEdit($id)
     {
-        $results = $this->blogService->showEdit($id);
-        return view('admin.blogs.editBlog', compact('results'));
+        $blog = $this->blogService->getEdit($id);
+        return view('admin.blogs.edit', compact('blog'));
 
     }
 

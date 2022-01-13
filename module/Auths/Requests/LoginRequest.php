@@ -6,6 +6,7 @@ use Infrastructure\Http\ApiRequest;
 
 class LoginRequest extends ApiRequest
 {
+
     public function authorize()
     {
         return true;
@@ -28,4 +29,5 @@ class LoginRequest extends ApiRequest
             'login.password'        => __('password'),
         ];
     }
+
 }
