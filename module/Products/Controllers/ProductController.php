@@ -56,12 +56,25 @@ class ProductController extends Controller
         
     }
 
-    public function getAll()
+    public function getByIdProduct($id)
     {
-        $result = $this->productService->getAll();
-        dd($result->product);
-        // return $result->;
+        $results = $this->categoryService->getAll();
+        $attributes = $this->attributeService->getAll();
+        $data = $this->productService->getByIdProduct($id);
+        return view('admin.products.edit', compact('data', 'results', 'attributes'));
     }
+
+    
+
+
+
+    // public function getAll()
+    // {
+    //     $result = $this->productService->getAll();
+    //     // dd($result->product);
+    //     // return $result->;
+    //     return $result;
+    // }
    
     
     // public function getEdit($id)
