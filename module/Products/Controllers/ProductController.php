@@ -56,19 +56,19 @@ class ProductController extends Controller
 
     public function getEdit($id)
     {
-        $result = $this->productDetailService->getById($id);
+        $product = $this->productService->getProductById($id);
         $categories = $this->categoryService->getAll();
-        return view('admin.products.edit_product', compact('result', 'categories'));
+        $attributes = $this->attributeService->getAll();
+        return view('admin.products.edit_product', compact('product', 'categories', 'attributes'));
     }
 
     public function edit(Request $request, $id)
     {
-        $products = $request['products'];
-        $this->categoryService->edit($products, $id);
-        $this->productDetailService->editCategoryId();
+        $products           = $request->products;
+        $productDetails     = $request->product_details;
+        $attributeProducts  = $request->attribute_products;
+        $this->productService->edit($id, $products, $productDetails, $attributeProducts);
         return redirect()->route('get_all_attribute');
     }
-
-
 
 }

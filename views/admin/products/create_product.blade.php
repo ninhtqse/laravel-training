@@ -39,9 +39,7 @@
                                 <label>Name</label>
                                 <input type="text" class="form-control" name="products[name]">
                             </div>
-
                             <div class="variant row">
-
                                 @foreach ($attributes as $attribute)
                                     <div class="form-group col-lg-6">
                                         <label>{{$attribute->name}}</label>
@@ -69,7 +67,6 @@
                                 </div>
                             </div>
                             <div class="append">
-
                             </div>
                             <div class="col-lg-6">
                                 <p class="add_variant" style="background:red;width:30px;height:30px;border-radius:5px;color:white;font-size:18px;text-align:center;line-height:30px;cursor:pointer;font-weight:bold">+</p>

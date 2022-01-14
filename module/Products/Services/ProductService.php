@@ -35,6 +35,12 @@ class ProductService
         $this->attributeProductRepository   =  $attributeProductRepository;
     }
 
+    public function getAll()
+    {
+        $data = $this->productRepository->getModel()->paginate(5);
+        return $data;
+    }
+
     public function create($products, $productDetails, $attributeProducts)
     {
         \DB::beginTransaction();
@@ -47,7 +53,6 @@ class ProductService
                 $productDetail['id']         = (string)\Str::uuid();
                 $productDetail = $this->helperFunction->saveImage($productDetail,'images');
                 $productDetailData[] = $productDetail;
-                dd($attributeProducts);
                 foreach ($attributeProducts[$key] as $k => $attributeProduct){
                     $attributeProductData[] = [
                         'id' => (string)\Str::uuid(),
@@ -66,16 +71,49 @@ class ProductService
         }
     }
 
-    public function getAll()
+    public function getProductById($productId)
     {
-        $data = $this->productRepository->getModel()->paginate(5);
-        return $data;
+        return $this->productRepository->getById($productId);
     }
 
-    public function editCategoryId($productId, $categoryId)
-    {
-        $this->productRepository->getModel()->where('id', $productId)->update($categoryId);
+    public function edit($productId, $products, $productDetails, $attributeProducts){
+        dd($productDetails);
+        \DB::beginTransaction();
+        try {
+            // delete product_details and attribute_products
+            $productDetailArray = $this->productRepository->getById($productId)->product_details;
+            foreach ($productDetailArray as $productDetail){
+                $productDetail->attributeProducts()->delete();
+            }
+            $this->productRepository->getById($productId)->product_details()->delete();
+
+            // update product
+            $product = $this->productRepository->getModel()->where('id',$productId);
+            $product->update($products);
+
+            // add product_details and attribute_products
+            $productDetailData = [];
+            $attributeProductData = [];
+            foreach ($productDetails as $key => $productDetail) {
+                $productDetail['product_id'] = $productId;
+                $productDetail['id']         = (string)\Str::uuid();
+                $productDetail = $this->helperFunction->saveImage($productDetail,'images');
+                $productDetailData[] = $productDetail;
+                foreach ($attributeProducts[$key] as $k => $attributeProduct){
+                    $attributeProductData[] = [
+                        'id' => (string)\Str::uuid(),
+                        'product_detail_id' => $productDetail['id'],
+                        'attribute_id' => $k,
+                        'value' => $attributeProduct,
+                    ];
+                }
+            }
+            $this->productDetailRepository->getModel()->insert($productDetailData);
+            $this->attributeProductRepository->getModel()->insert($attributeProductData);
+            \DB::commit();
+        } catch (\Exception $e) {
+            \DB::rollback();
+            throw $e;
+        }
     }
-
-
 }

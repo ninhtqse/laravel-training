@@ -2,7 +2,6 @@
 namespace Module\Products\Models;
 
 use Infrastructure\Database\Eloquent\Model;
-use Module\Products\Models\Product;
 use Infrastructure\Database\Traits\Uuids;
 
 class ProductDetail extends Model
@@ -16,4 +15,8 @@ class ProductDetail extends Model
         return $this->belongsTo(Product::class);
     }
 
+    public function attributeProducts()
+    {
+        return $this->hasMany(AttributeProduct::class);
+    }
 }
