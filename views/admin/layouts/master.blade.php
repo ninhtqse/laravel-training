@@ -218,17 +218,17 @@
             <div id="sidebar-menu">
                 <ul>
                     <li><a href='{{route('admin')}}'><i class="fa fa-home"></i> <span>Dashboard</span> </a>
-
-
                     <li class='has_sub'><a href='javascript:void(0);'><i class="fa fa-check-square-o"></i> <span>User</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
                         <ul>
                             <li><a href='{{route("admin")}}'><span>List User</span></a></li>
                         </ul>
                     </li>
 
-                    <li class='has_sub'><a href='javascript:void(0);'><i class="fa fa-th"></i> <span>Category</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span> </a>
+                    <li class='has_sub'><a href='javascript:void(0);'><i class="fa fa-th"></i> <span>Product</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span> </a>
                         <ul>
                             <li><a href='{{route("get_all_category")}}'><span>List Category</span></a></li>
+                            <li><a href='{{route("get_all_attribute")}}'><span>List Attribute</span></a></li>
+                            <li><a href='{{route("get_product")}}'><span>List Product</span></a></li>
                         </ul>
                     </li>
 
@@ -237,13 +237,6 @@
                             <li><a href='{{route("get_list_blog")}}'><span>List Blog</span></a></li>
                         </ul>
                     </li>
-
-                    <li class='has_sub'><a href='javascript:void(0);'><i class="fa fa-th"></i> <span>Attribute</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span> </a>
-                        <ul>
-                            <li><a href='{{route("get_all_attribute")}}'><span>List Attribute</span></a></li>
-                        </ul>
-                    </li>
-
                 </ul>
 
             </div>

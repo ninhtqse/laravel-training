@@ -58,12 +58,12 @@
                                     <div class="form-group col-lg-3 ">
                                         <label>Current Image</label>
                                         <div class="img-wrap">
-                                            <img src="../images/uploads/{{$productDetail->images}}" style="width:200px;height:100px">
+                                            <img id="previewImg" src="../images/uploads/{{$productDetail->images}}" style="width:200px;height:100px">
                                         </div>
                                     </div>
                                     <div class="form-group col-lg-3 ">
                                         <label>New Image</label>
-                                        <input type="file" class="form-control" name="product_details[{{$key}}][images]">
+                                        <input type="file" class="form-control" name="product_details[{{$key}}][images]" onchange="previewFile(this);">
                                     </div>
                                     <div class="col-lg-6">
                                         <p class="delete_variant" style="background:green;width:30px;height:30px;border-radius:5px;color:white;font-size:18px;text-align:center;line-height:30px;cursor:pointer;font-weight:bold">-</p>
@@ -76,6 +76,7 @@
                             <div class="form-group col-lg-6">
                                 <p class="add_variant" style="background:red;width:30px;height:30px;border-radius:5px;color:white;font-size:18px;text-align:center;line-height:30px;cursor:pointer;font-weight:bold">+</p>
                             </div>
+
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
@@ -132,6 +133,20 @@
             return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
                 (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
             );
+        }
+
+        function previewFile(input){
+            var file = $("input[type=file]").get(0).files[0];
+
+            if(file){
+                var reader = new FileReader();
+
+                reader.onload = function(){
+                    $("#previewImg").attr("src", reader.result);
+                }
+
+                reader.readAsDataURL(file);
+            }
         }
     </script>
 @endsection

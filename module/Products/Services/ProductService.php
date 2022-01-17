@@ -77,7 +77,6 @@ class ProductService
     }
 
     public function edit($productId, $products, $productDetails, $attributeProducts){
-        dd($productDetails);
         \DB::beginTransaction();
         try {
             // delete product_details and attribute_products
@@ -110,6 +109,25 @@ class ProductService
             }
             $this->productDetailRepository->getModel()->insert($productDetailData);
             $this->attributeProductRepository->getModel()->insert($attributeProductData);
+            \DB::commit();
+        } catch (\Exception $e) {
+            \DB::rollback();
+            throw $e;
+        }
+    }
+
+    public function delete($productId)
+    {
+        \DB::beginTransaction();
+        try {
+            // delete product_details and attribute_products
+            $productDetailArray = $this->productRepository->getById($productId)->product_details;
+            foreach ($productDetailArray as $productDetail){
+                $productDetail->attributeProducts()->delete();
+            }
+            $this->productRepository->getById($productId)->product_details()->delete();
+            //delete products
+            $this->productRepository->getById($productId)->delete();
             \DB::commit();
         } catch (\Exception $e) {
             \DB::rollback();

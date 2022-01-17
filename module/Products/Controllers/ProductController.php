@@ -71,4 +71,10 @@ class ProductController extends Controller
         return redirect()->route('get_all_attribute');
     }
 
+    public function delete($id)
+    {
+        $this->productService->delete($id);
+        return redirect()->route('get_all_attribute');
+    }
+
 }
