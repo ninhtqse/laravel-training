@@ -63,7 +63,7 @@
                                     </div>
                                     <div class="form-group col-lg-3 ">
                                         <label>New Image</label>
-                                        <input type="file" class="form-control" name="product_details[{{$key}}][images]" onchange="previewFile(this);">
+                                        <input type="file" class="form-control" name="product_details[{{$key}}][images]" onchange="previewFile(this);" alt="Can't Load Image!">
                                     </div>
                                     <div class="col-lg-6">
                                         <p class="delete_variant" style="background:green;width:30px;height:30px;border-radius:5px;color:white;font-size:18px;text-align:center;line-height:30px;cursor:pointer;font-weight:bold">-</p>
@@ -107,16 +107,22 @@
               <input type="text" class="form-control" name="product_details[${count}][price]">
           </div>
           <div class="form-group col-lg-6">
-              <label>Image</label>
-              <input type="file" class="form-control" name="product_details[${count}][images]">
-          </div>
-          <div class="form-group col-lg-6">
               <label>Quantity</label>
               <input type="text" class="form-control" name="product_details[${count}][quantity]">
           </div>
           <div class="form-group col-lg-6">
               <label>Description</label>
               <input type="text" class="form-control" name="product_details[${count}][description]">
+          </div>
+          <div class="form-group col-lg-3 ">
+              <label>Current Image</label>
+              <div class="img-wrap">
+                  <img id="previewImg" src="" style="width:200px;height:100px" alt="No Image!">
+              </div>
+          </div>
+          <div class="form-group col-lg-3 ">
+              <label>New Image</label>
+              <input type="file" class="form-control" name="product_details[${count}][images]" onchange="previewFile(this);">
           </div>
           <div class="col-lg-6">
               <p class="delete_variant" style="background:green;width:30px;height:30px;border-radius:5px;color:white;font-size:18px;text-align:center;line-height:30px;cursor:pointer;font-weight:bold">-</p>

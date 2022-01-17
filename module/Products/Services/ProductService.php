@@ -82,6 +82,7 @@ class ProductService
             // delete product_details and attribute_products
             $productDetailArray = $this->productRepository->getById($productId)->product_details;
             foreach ($productDetailArray as $productDetail){
+                $this->helperFunction->deleteImage($productDetail->images);
                 $productDetail->attributeProducts()->delete();
             }
             $this->productRepository->getById($productId)->product_details()->delete();
@@ -123,6 +124,7 @@ class ProductService
             // delete product_details and attribute_products
             $productDetailArray = $this->productRepository->getById($productId)->product_details;
             foreach ($productDetailArray as $productDetail){
+                $this->helperFunction->deleteImage($productDetail->images);
                 $productDetail->attributeProducts()->delete();
             }
             $this->productRepository->getById($productId)->product_details()->delete();

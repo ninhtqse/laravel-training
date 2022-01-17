@@ -220,7 +220,7 @@
                     <li><a href='{{route('admin')}}'><i class="fa fa-home"></i> <span>Dashboard</span> </a>
                     <li class='has_sub'><a href='javascript:void(0);'><i class="fa fa-check-square-o"></i> <span>User</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
                         <ul>
-                            <li><a href='{{route("admin")}}'><span>List User</span></a></li>
+                            <li><a href='{{route("getAllUsers")}}'><span>List User</span></a></li>
                         </ul>
                     </li>
 

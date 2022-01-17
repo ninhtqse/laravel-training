@@ -3,7 +3,7 @@
  * Dual licensed under MIT and GPL.
  * Date: 2010-04-25
  *
- * @description Trigger the bottom event when the users has scrolled to the bottom of an element
+ * @description Trigger the bottom event when the user has scrolled to the bottom of an element
  * @author Jim Yi
  * @version 1.0
  *

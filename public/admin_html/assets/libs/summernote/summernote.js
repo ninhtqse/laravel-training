@@ -18,7 +18,7 @@
     factory(window.jQuery, window.CodeMirror);
   }
 }(function ($, CodeMirror) {
-
+  
 
 
   if ('function' !== typeof Array.prototype.reduce) {
@@ -213,7 +213,7 @@
 
       return array[idx - 1];
     };
-
+  
     /**
      * get sum from a list
      * @param {Array} array - array
@@ -225,7 +225,7 @@
         return memo + fn(v);
       }, 0);
     };
-
+  
     /**
      * returns a copy of the collection with array type.
      * @param {Collection} collection - collection eg) node.childNodes, ...
@@ -237,7 +237,7 @@
       }
       return result;
     };
-
+  
     /**
      * cluster elements by predicate function.
      * @param {Array} array - array
@@ -257,7 +257,7 @@
         return memo;
       }, [[head(array)]]);
     };
-
+  
     /**
      * returns a copy of the array with all falsy values removed
      * @param {Array} array - array
@@ -270,7 +270,7 @@
       }
       return aResult;
     };
-
+  
     return { head: head, last: last, initial: initial, tail: tail,
              prev: prev, next: next, sum: sum, from: from,
              compact: compact, clusterBy: clusterBy };
@@ -289,7 +289,7 @@
     var isEditable = function (node) {
       return node && $(node).hasClass('note-editable');
     };
-
+  
     var isControlSizing = function (node) {
       return node && $(node).hasClass('note-control-sizing');
     };
@@ -347,12 +347,12 @@
         return node && node.nodeName === sNodeName;
       };
     };
-
+  
     var isPara = function (node) {
       // Chrome(v31.0), FF(v25.0.1) use DIV for paragraph
       return node && /^DIV|^P|^LI|^H[1-7]/.test(node.nodeName);
     };
-
+  
     var isList = function (node) {
       return node && /^UL|^OL/.test(node.nodeName);
     };
@@ -360,7 +360,7 @@
     var isCell = function (node) {
       return node && /^TD|^TH/.test(node.nodeName);
     };
-
+  
     /**
      * find nearest ancestor predicate hit
      *
@@ -376,7 +376,7 @@
       }
       return null;
     };
-
+  
     /**
      * returns new array of ancestor nodes (until predicate hit).
      *
@@ -385,7 +385,7 @@
      */
     var listAncestor = function (node, pred) {
       pred = pred || func.fail;
-
+  
       var aAncestor = [];
       ancestor(node, function (el) {
         aAncestor.push(el);
@@ -393,7 +393,7 @@
       });
       return aAncestor;
     };
-
+  
     /**
      * returns common ancestor node between two nodes.
      *
@@ -407,7 +407,7 @@
       }
       return null; // difference document area
     };
-
+  
     /**
      * listing all Nodes between two nodes.
      * FIXME: nodeA and nodeB must be sorted, use comparePoints later.
@@ -417,7 +417,7 @@
      */
     var listBetween = function (nodeA, nodeB) {
       var aNode = [];
-
+  
       var bStart = false, bEnd = false;
 
       // DFS(depth first search) with commonAcestor.
@@ -431,10 +431,10 @@
           fnWalk(node.childNodes[idx]);
         }
       })(commonAncestor(nodeA, nodeB));
-
+  
       return aNode;
     };
-
+  
     /**
      * listing all previous siblings (until predicate hit).
      * @param {Element} node
@@ -442,7 +442,7 @@
      */
     var listPrev = function (node, pred) {
       pred = pred || func.fail;
-
+  
       var aNext = [];
       while (node) {
         aNext.push(node);
@@ -451,7 +451,7 @@
       }
       return aNext;
     };
-
+  
     /**
      * listing next siblings (until predicate hit).
      *
@@ -460,7 +460,7 @@
      */
     var listNext = function (node, pred) {
       pred = pred || func.fail;
-
+  
       var aNext = [];
       while (node) {
         aNext.push(node);
@@ -492,7 +492,7 @@
 
       return aDescendant;
     };
-
+  
     /**
      * insert node after preceding
      *
@@ -508,7 +508,7 @@
       }
       return node;
     };
-
+  
     /**
      * append elements.
      *
@@ -521,9 +521,9 @@
       });
       return node;
     };
-
+  
     var isText = makePredByNodeName('#text');
-
+  
     /**
      * returns #text's text size or element's childNodes size
      *
@@ -533,7 +533,7 @@
       if (isText(node)) { return node.nodeValue.length; }
       return node.childNodes.length;
     };
-
+  
     /**
      * returns offset from parent.
      *
@@ -544,7 +544,7 @@
       while ((node = node.previousSibling)) { offset += 1; }
       return offset;
     };
-
+  
     /**
      * return offsetPath(array of offset) from ancestor
      *
@@ -555,7 +555,7 @@
       var aAncestor = list.initial(listAncestor(node, func.eq(ancestor)));
       return $.map(aAncestor, position).reverse();
     };
-
+  
     /**
      * return element from offsetPath(array of offset)
      *
@@ -569,7 +569,7 @@
       }
       return current;
     };
-
+  
     /**
      * split element or #text
      *
@@ -579,16 +579,16 @@
     var splitData = function (node, offset) {
       if (offset === 0) { return node; }
       if (offset >= length(node)) { return node.nextSibling; }
-
+  
       // splitText
       if (isText(node)) { return node.splitText(offset); }
-
+  
       // splitElement
       var child = node.childNodes[offset];
       node = insertAfter(node.cloneNode(false), node);
       return appends(node, listNext(child));
     };
-
+  
     /**
      * split dom tree by boundaryPoint(pivot and offset)
      *
@@ -609,7 +609,7 @@
         return clone;
       });
     };
-
+  
     /**
      * remove node, (bRemoveChild: remove child or not)
      * @param {Element} node
@@ -618,7 +618,7 @@
     var remove = function (node, bRemoveChild) {
       if (!node || !node.parentNode) { return; }
       if (node.removeNode) { return node.removeNode(bRemoveChild); }
-
+  
       var elParent = node.parentNode;
       if (!bRemoveChild) {
         var aNode = [];
@@ -626,19 +626,19 @@
         for (i = 0, sz = node.childNodes.length; i < sz; i++) {
           aNode.push(node.childNodes[i]);
         }
-
+  
         for (i = 0, sz = aNode.length; i < sz; i++) {
           elParent.insertBefore(aNode[i], node);
         }
       }
-
+  
       elParent.removeChild(node);
     };
-
+  
     var html = function ($node) {
       return dom.isTextarea($node[0]) ? $node.val() : $node.html();
     };
-
+  
     return {
       blank: agent.bMSIE ? '&nbsp;' : '<br/>',
       emptyPara: '<p><br/></p>',
@@ -977,7 +977,7 @@
         }).readAsDataURL(file);
       }).promise();
     };
-
+  
     /**
      * create `<image>` from url string
      *
@@ -1136,7 +1136,7 @@
    */
   var range = (function () {
     var bW3CRangeSupport = !!document.createRange;
-
+     
     /**
      * return boundaryPoint from TextRange, inspired by Andy Na's HuskyRange.js
      * @param {TextRange} textRange
@@ -1145,7 +1145,7 @@
      */
     var textRange2bp = function (textRange, bStart) {
       var elCont = textRange.parentElement(), nOffset;
-
+  
       var tester = document.body.createTextRange(), elPrevCont;
       var aChild = list.from(elCont.childNodes);
       for (nOffset = 0; nOffset < aChild.length; nOffset++) {
@@ -1154,39 +1154,39 @@
         if (tester.compareEndPoints('StartToStart', textRange) >= 0) { break; }
         elPrevCont = aChild[nOffset];
       }
-
+  
       if (nOffset !== 0 && dom.isText(aChild[nOffset - 1])) {
         var textRangeStart = document.body.createTextRange(), elCurText = null;
         textRangeStart.moveToElementText(elPrevCont || elCont);
         textRangeStart.collapse(!elPrevCont);
         elCurText = elPrevCont ? elPrevCont.nextSibling : elCont.firstChild;
-
+  
         var pointTester = textRange.duplicate();
         pointTester.setEndPoint('StartToStart', textRangeStart);
         var nTextCount = pointTester.text.replace(/[\r\n]/g, '').length;
-
+  
         while (nTextCount > elCurText.nodeValue.length && elCurText.nextSibling) {
           nTextCount -= elCurText.nodeValue.length;
           elCurText = elCurText.nextSibling;
         }
-
+  
         /* jshint ignore:start */
         var sDummy = elCurText.nodeValue; //enforce IE to re-reference elCurText, hack
         /* jshint ignore:end */
-
+  
         if (bStart && elCurText.nextSibling && dom.isText(elCurText.nextSibling) &&
             nTextCount === elCurText.nodeValue.length) {
           nTextCount -= elCurText.nodeValue.length;
           elCurText = elCurText.nextSibling;
         }
-
+  
         elCont = elCurText;
         nOffset = nTextCount;
       }
-
+  
       return {cont: elCont, offset: nOffset};
     };
-
+    
     /**
      * return TextRange from boundary point (inspired by google closure-library)
      * @param {BoundaryPoint} bp
@@ -1195,7 +1195,7 @@
     var bp2textRange = function (bp) {
       var textRangeInfo = function (elCont, nOffset) {
         var elNode, bCollapseToStart;
-
+  
         if (dom.isText(elCont)) {
           var aPrevText = dom.listPrev(elCont, func.not(dom.isText));
           var elPrevCont = list.last(aPrevText).previousSibling;
@@ -1207,23 +1207,23 @@
           if (dom.isText(elNode)) {
             return textRangeInfo(elNode, nOffset);
           }
-
+  
           nOffset = 0;
           bCollapseToStart = false;
         }
-
+  
         return {cont: elNode, collapseToStart: bCollapseToStart, offset: nOffset};
       };
-
+  
       var textRange = document.body.createTextRange();
       var info = textRangeInfo(bp.cont, bp.offset);
-
+  
       textRange.moveToElementText(info.cont);
       textRange.collapse(info.collapseToStart);
       textRange.moveStart('character', info.offset);
       return textRange;
     };
-
+    
     /**
      * Wrapped Range
      *
@@ -1237,7 +1237,7 @@
       this.so = so;
       this.ec = ec;
       this.eo = eo;
-
+  
       // nativeRange: get nativeRange from sc, so, ec, eo
       var nativeRange = function () {
         if (bW3CRangeSupport) {
@@ -1287,7 +1287,7 @@
       this.commonAncestor = function () {
         return dom.commonAncestor(sc, ec);
       };
-
+      
       /**
        * makeIsOn: return isOn(pred) function
        */
@@ -1297,7 +1297,7 @@
           return !!elAncestor && (elAncestor === dom.ancestor(ec, pred));
         };
       };
-
+  
       // isOnEditable: judge whether range is on editable or not
       this.isOnEditable = makeIsOn(dom.isEditable);
       // isOnList: judge whether range is on list node or not
@@ -1321,12 +1321,12 @@
           nativeRng.pasteHTML(node.outerHTML); // NOTE: missing node reference.
         }
       };
-
+  
       this.toString = function () {
         var nativeRng = nativeRange();
         return bW3CRangeSupport ? nativeRng.toString() : nativeRng.text;
       };
-
+  
       /**
        * create offsetPath bookmark
        * @param {Element} elEditable
@@ -1347,7 +1347,7 @@
         return nativeRng.getClientRects();
       };
     };
-
+  
     return {
       /**
        * create Range Object From arguments or Browser Selection
@@ -1362,7 +1362,7 @@
           if (bW3CRangeSupport) { // webkit, firefox
             var selection = document.getSelection();
             if (selection.rangeCount === 0) { return null; }
-
+  
             var nativeRng = selection.getRangeAt(0);
             sc = nativeRng.startContainer;
             so = nativeRng.startOffset;
@@ -1374,10 +1374,10 @@
             textRangeEnd.collapse(false);
             var textRangeStart = textRange;
             textRangeStart.collapse(true);
-
+  
             var bpStart = textRange2bp(textRangeStart, true),
             bpEnd = textRange2bp(textRangeEnd, false);
-
+  
             sc = bpStart.cont;
             so = bpStart.offset;
             ec = bpEnd.cont;
@@ -1547,7 +1547,7 @@
     /* jshint ignore:end */
 
     /**
-     * @param {jQuery} $editable
+     * @param {jQuery} $editable 
      * @param {WrappedRange} rng
      * @param {Number} nTabsize
      */
@@ -1563,7 +1563,7 @@
 
     /**
      * handle tab key
-     * @param {jQuery} $editable
+     * @param {jQuery} $editable 
      * @param {Number} nTabsize
      * @param {Boolean} bShift
      */
@@ -2228,7 +2228,7 @@
   };
 
   /**
-   * Dialog
+   * Dialog 
    *
    * @class
    */
@@ -2294,8 +2294,8 @@
     /**
      * Show video dialog and set event handlers on dialog controls.
      *
-     * @param {jQuery} $dialog
-     * @param {Object} videoInfo
+     * @param {jQuery} $dialog 
+     * @param {Object} videoInfo 
      * @return {Promise}
      */
     this.showVideoDialog = function ($editable, $dialog, videoInfo) {
@@ -2419,7 +2419,7 @@
      * @returns {Object}
      */
     var makeLayoutInfo = function (descendant) {
-      var $target = $(descendant).closest('.note-editor, .note-air-editor, .note-air-layouts');
+      var $target = $(descendant).closest('.note-editor, .note-air-editor, .note-air-layout');
 
       if (!$target.length) { return null; }
 
@@ -2844,7 +2844,7 @@
     /**
      * attach Drag and Drop Events
      *
-     * @param {Object} oLayoutInfo - layouts Informations
+     * @param {Object} oLayoutInfo - layout Informations
      */
     var attachDragAndDropEvent = function (oLayoutInfo) {
       var collection = $(), $dropzone = oLayoutInfo.dropzone,
@@ -2935,8 +2935,8 @@
     /**
      * attach eventhandler
      *
-     * @param {Object} oLayoutInfo - layouts Informations
-     * @param {Object} options - users options include custom event handlers
+     * @param {Object} oLayoutInfo - layout Informations
+     * @param {Object} options - user options include custom event handlers
      * @param {Function} options.enter - enter key handler
      */
     this.attach = function (oLayoutInfo, options) {
@@ -3570,7 +3570,7 @@
     };
 
     var tplShortcutTable = function (lang, options) {
-      var template = '<table class="note-shortcut-layouts">' +
+      var template = '<table class="note-shortcut-layout">' +
                        '<tbody>' +
                          '<tr><td>' + tplShortcutAction(lang, options) + '</td><td>' + tplShortcutText(lang, options) + '</td></tr>' +
                          '<tr><td>' + tplShortcutStyle(lang, options) + '</td><td>' + tplShortcutPara(lang, options) + '</td></tr>';
@@ -3717,7 +3717,7 @@
     };
 
     /**
-     * create summernote layouts (air mode)
+     * create summernote layout (air mode)
      *
      * @param {jQuery} $holder
      * @param {Object} options
@@ -3738,7 +3738,7 @@
 
       // create Popover
       var $popover = $(tplPopovers(langInfo, options));
-      $popover.addClass('note-air-layouts');
+      $popover.addClass('note-air-layout');
       $popover.attr('id', 'note-popover-' + id);
       $popover.appendTo(body);
       createTooltip($popover, keyMap);
@@ -3746,13 +3746,13 @@
 
       // create Handle
       var $handle = $(tplHandles());
-      $handle.addClass('note-air-layouts');
+      $handle.addClass('note-air-layout');
       $handle.attr('id', 'note-handle-' + id);
       $handle.appendTo(body);
 
       // create Dialog
       var $dialog = $(tplDialogs(langInfo, options));
-      $dialog.addClass('note-air-layouts');
+      $dialog.addClass('note-air-layout');
       $dialog.attr('id', 'note-dialog-' + id);
       $dialog.find('button.close, a.modal-close').click(function () {
         $(this).closest('.modal').modal('hide');
@@ -3761,7 +3761,7 @@
     };
 
     /**
-     * create summernote layouts (normal mode)
+     * create summernote layout (normal mode)
      *
      * @param {jQuery} $holder
      * @param {Object} options
@@ -3847,7 +3847,7 @@
     };
 
     /**
-     * create summernote layouts
+     * create summernote layout
      *
      * @param {jQuery} $holder
      * @param {Object} options
@@ -3914,7 +3914,7 @@
   $.fn.extend({
     /**
      * initialize summernote
-     *  - create editor layouts and attach Mouse and keyboard events.
+     *  - create editor layout and attach Mouse and keyboard events.
      *
      * @param {Object} options
      * @returns {this}
@@ -3953,7 +3953,7 @@
 
       return this;
     },
-    //
+    // 
 
     /**
      * get the HTML contents of note or set the HTML contents of note.

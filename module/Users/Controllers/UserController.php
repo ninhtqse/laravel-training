@@ -16,6 +16,11 @@
             $this->userService = $userService;
         }
 
+        public function getDashBoard()
+        {
+            return view('admin.dashboard.dashboard');
+        }
+
         public function getAll()
         {
             $results = $this->userService->getAll();
