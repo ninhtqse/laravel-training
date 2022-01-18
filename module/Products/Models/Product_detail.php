@@ -16,4 +16,9 @@ class Product_detail extends Model
       return $this->belongsTo(Product::class);
     }
 
+    public function attributeProducts()
+    {
+        return $this->hasMany(AttributeProduct::class);
+    }
+
 }

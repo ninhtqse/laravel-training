@@ -4,7 +4,7 @@ namespace Infrastructure\Libraries;
 
 
 class HelperFunction {
-    public function saveImage($data,$field)
+    public function saveImage($data, $field, $_id = null)
     {
         if (!@$data[$field]) {
             return $data;
@@ -15,7 +15,9 @@ class HelperFunction {
         $file_name  = $id.'_image.'.$extension[1];
         $image->move('images/uploads', $file_name);
         $data[$field] = $file_name;
-        $data['id'] = $id;
+        if(!$_id){
+            $data['id'] = $id;
+        }
         return $data;
     }
 

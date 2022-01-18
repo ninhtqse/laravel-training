@@ -20,7 +20,6 @@ class CreateTableProductDetailsTable extends Migration
             $table->decimal('price');
             $table->integer('quantity');
             $table->text('description');
-            $table->string('name');
             $table->string('images');
             $table->timestamps();
         });

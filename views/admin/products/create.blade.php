@@ -6,6 +6,8 @@
         border-color: green;
         margin-top: 10px;
     }
+
+    
 </style>
 @endsection
 @section('content')
@@ -54,7 +56,9 @@
                             </div>
                             <div class="form-group col-lg-6">
                                 <label>Image</label>
-                                <input type="file" class="form-control" name="product_details[1][image]">
+                                {{-- <input type="file" class="form-control" name="product_details[1][image]"> --}}
+                                <input type='file' class="form-control" onchange="readURL1(this);" name="product_details[1][image]" />
+                                    <img id="blah" src="#" alt="your image" />
                             </div>
                             <div class="form-group col-lg-6">
                                 <label>Quantity</label>
@@ -107,7 +111,8 @@
           </div>
           <div class="form-group col-lg-6">
               <label>Image</label>
-              <input type="file" class="form-control" name="product_details[${count}][image]">
+              <input type='file' onchange="readURL${count}(this);" name="product_details[1][image]" class="form-control" name="product_details[${count}][image]" />
+                                    <img id="blah" src="#" alt="your image" />
           </div>
           <div class="form-group col-lg-6">
               <label>Quantity</label>
@@ -124,6 +129,8 @@
       
       
       $('.append').append(html)
+
+      
       
       
     });
@@ -132,11 +139,34 @@
       })
   });
 
+
   function uuidv4() {
   return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
   );
 }
+
+
+
+function readURL1(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(200);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+
+
+   
     
 </script>
 @endsection

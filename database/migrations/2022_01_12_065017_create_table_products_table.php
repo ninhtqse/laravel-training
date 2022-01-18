@@ -16,6 +16,7 @@ class CreateTableProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->uuid('id')->primary()->index()->comment('uuid gen auto in code');
             $table->uuid('category_id')->index();
+            $table->string('name');
             $table->timestamps();
         });
     }

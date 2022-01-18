@@ -1,6 +1,6 @@
 <?php 
-$router->group(['prefix'=>'/admin'],function() use($router){
-    $router->get('/users','UserController@getAll')->name('admin');
+$router->group(['prefix'=>'/admin/users'],function() use($router){
+    $router->get('/','UserController@getAll')->name('admin');
     $router->post('/create','UserController@createUser')->name('create_user');
     $router->get('/create','UserController@create')->name('get_create');
     $router->get('/edit/{id}', 'UserController@showEdit')->name('get_edit');

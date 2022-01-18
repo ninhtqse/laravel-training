@@ -8,8 +8,10 @@ use Module\Products\Services\ProductDetailService;
 use Module\Products\Services\AttributeProductService;
 use Infrastructure\Http\Controller;
 use Illuminate\Support\Facades\Auth;
-use Module\Categories\Services\CategoryService;
-use Module\Attributes\Services\AttributeService;
+use Module\Products\Services\CategoryService;
+use Module\Products\Services\AttributeService;
+use Module\Products\Requests\UpdateProductRequest;
+
 class ProductController extends Controller
 {
     protected $productService;
@@ -62,6 +64,13 @@ class ProductController extends Controller
         $attributes = $this->attributeService->getAll();
         $data = $this->productService->getByIdProduct($id);
         return view('admin.products.edit', compact('data', 'results', 'attributes'));
+    }
+
+    public function edit(UpdateProductRequest $request, $id)
+    {
+        dd($request->all());
+        $this->productService->edit($id, $request->all());
+        return redirect()->back();
     }
 
     

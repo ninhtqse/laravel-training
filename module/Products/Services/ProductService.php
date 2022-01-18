@@ -79,32 +79,19 @@ class ProductService
         return $data;
     }
 
-    public function edit($id, $product, $name, $productDetail,$attributeProduct)
+
+
+    public function edit($id, $data)
     {
         \DB::begintransaction();
         try {
-            $product['name'] = $name;
-            $product = $this->productRepository->getModel()->where('id', $id)->update($product);
-            $data['product'] = $product;
-            $product_details = [];
-            $product_attributes = [];
-            foreach($productDetail as $key => $value){
-                $value['product_id']    = $product->id;
-                $value['id']            = (string)\Str::uuid();
-                $value = $this->helperFunction->saveImage($value,'image');
-                $product_details[]      = $value;
-
-                foreach($attributeProduct[$key] as $k=>$item){
-                    $attribute['product_detail_id'] = $value['id'];
-                    $attribute['attribute_id']      = $k;
-                    $attribute['value']             = $item;
-                    $attribute['id']                = (string)\Str::uuid();
-                    $product_attributes[]           = $attribute;
-                }
-            }
-            $this->productDetailRepository->getModel()->insert($product_details);
-            $this->attributeProductRepository->getModel()->insert($product_attributes);
-
+            $productRaw =$this->productRepository->getById($id);
+            [$products, $product_details, $attribute_products] = $this->splitArray($data);
+            [$productDetail, $attributeProducts] = $this->mapData($product_details, $attribute_products, $id);
+            $this->deleteRelationship($productRaw);
+            $this->productRepository->update($productRaw, $products);            
+            $this->productDetailRepository->getModel()->insert($productDetail);
+            $this->attributeProductRepository->getModel()->insert($attributeProducts);
             \DB::commit();
         } catch (\Exception $e) {
            \DB::rollback();
@@ -112,13 +99,58 @@ class ProductService
         }
     }
 
+    protected function mapData($productDetail, $attributeProducts, $productId)
+    {
+        $attribute_products = [];
+        foreach($productDetail as $key => $value){
+            if($value['id']){
+                if(@$value['image']){
+                    $productDetail[$key] = $this->helperFunction->saveImage($value,'image', $value['id']);
+                }else{
+                    $productDetail[$key]['image'] = $this->productDetailRepository->getById($value['id'])->image;
+                }
+            }else{
+                $productDetail[$key] = $this->helperFunction->saveImage($value,'image');
+            }
+            $productDetail[$key]['product_id'] = $productId;
 
-    
+            foreach($attributeProducts[$key] as $k => $item){
+                $attribute_products[] = [
+                    'id'                => (string)\Str::uuid(),
+                    'attribute_id'      => $k,
+                    'value'             => $item,
+                    'product_detail_id' => $productDetail[$key]['id']
+                
+                ];
+            }
+        }
+        
+        return [$productDetail, $attribute_products];
+    }
 
+
+    private function splitArray($data)
+    {
+        $products               = [];
+        $product_details        = [];
+        $attribute_products     = [];
+        extract($data);
+        return [$products, $product_details, $attribute_products];
+    }
+
+    public function deleteRelationship($product)
+    {
+        $productDetail = $product->product_details()->pluck('id')->toArray();
+        $this->attributeProductRepository->getModel()->whereIn('product_detail_id', $productDetail)->delete();
+        $product->product_details()->delete();
+    }
     public function editCategoryId($productId, $categoryId)
     {
         $this->productRepository->getModel()->where('id', $productId)->update($categoryId);
     }
+    
+
+    
 
     
 
