@@ -5,7 +5,7 @@
             <div class="col-sm-12 portlets">
                 <div class="widget">
                     <div class="widget-header transparent">
-                        <h2><strong>Contact</strong> Form</h2>
+                        <h2><strong>Edit</strong> Product</h2>
                         <div class="additional-btn">
                             <a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
                             <a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
@@ -38,22 +38,22 @@
                                             @if($attribute->id == $attributeProduct->attribute_id)
                                                 <div class="form-group col-lg-6">
                                                     <label>{{$attribute->name}}</label>
-                                                    <input type="text" class="form-control" name="attribute_products[{{$key}}][{{$attribute->id}}]" value="{{$attributeProduct->value}}">
+                                                    <input type="text" class="form-control" name="attribute_products[{{$productDetail->id}}][{{$attribute->id}}]" value="{{$attributeProduct->value}}">
                                                 </div>
                                             @endif
                                         @endforeach
                                     @endforeach
                                     <div class="form-group col-lg-6">
                                         <label>Price</label>
-                                        <input type="text" class="form-control" name="product_details[{{$key}}][price]" value="{{$productDetail->price}}">
+                                        <input type="text" class="form-control" name="product_details[{{$productDetail->id}}][price]" value="{{$productDetail->price}}">
                                     </div>
                                     <div class="form-group col-lg-6">
                                         <label>Quantity</label>
-                                        <input type="text" class="form-control" name="product_details[{{$key}}][quantity]" value="{{$productDetail->quantity}}">
+                                        <input type="text" class="form-control" name="product_details[{{$productDetail->id}}][quantity]" value="{{$productDetail->quantity}}">
                                     </div>
                                     <div class="form-group col-lg-6">
                                         <label>Description</label>
-                                        <input type="text" class="form-control" name="product_details[{{$key}}][description]" value="{{$productDetail->description}}">
+                                        <input type="text" class="form-control" name="product_details[{{$productDetail->id}}][description]" value="{{$productDetail->description}}">
                                     </div>
                                     <div class="form-group col-lg-3 ">
                                         <label>Current Image</label>
@@ -63,7 +63,7 @@
                                     </div>
                                     <div class="form-group col-lg-3 ">
                                         <label>New Image</label>
-                                        <input type="file" class="form-control" name="product_details[{{$key}}][images]" onchange="previewFile(this);" alt="Can't Load Image!">
+                                        <input type="file" class="form-control" name="product_details[{{$productDetail->id}}][images]" onchange="previewFile(this);" alt="Can't Load Image!">
                                     </div>
                                     <div class="col-lg-6">
                                         <p class="delete_variant" style="background:green;width:30px;height:30px;border-radius:5px;color:white;font-size:18px;text-align:center;line-height:30px;cursor:pointer;font-weight:bold">-</p>
@@ -87,7 +87,6 @@
 @endsection
 
 @section('js')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
             $('.add_variant').click(function(){

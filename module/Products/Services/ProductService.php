@@ -81,8 +81,9 @@ class ProductService
         try {
             // delete product_details and attribute_products
             $productDetailArray = $this->productRepository->getById($productId)->product_details;
+            $ImageProductDetails = [];
             foreach ($productDetailArray as $productDetail){
-                $this->helperFunction->deleteImage($productDetail->images);
+                $ImageProductDetails[$productDetail->id] = $productDetail->images;
                 $productDetail->attributeProducts()->delete();
             }
             $this->productRepository->getById($productId)->product_details()->delete();
@@ -97,7 +98,15 @@ class ProductService
             foreach ($productDetails as $key => $productDetail) {
                 $productDetail['product_id'] = $productId;
                 $productDetail['id']         = (string)\Str::uuid();
-                $productDetail = $this->helperFunction->saveImage($productDetail,'images');
+                if (array_key_exists('images', $productDetail)) {
+                    if (array_key_exists($key, $ImageProductDetails)) {
+                        $this->helperFunction->deleteImage($ImageProductDetails[$key]);
+                    }
+                    $productDetail = $this->helperFunction->saveImage($productDetail,'images');
+                }
+                else{
+                    $productDetail['images'] = $ImageProductDetails[$key];
+                }
                 $productDetailData[] = $productDetail;
                 foreach ($attributeProducts[$key] as $k => $attributeProduct){
                     $attributeProductData[] = [

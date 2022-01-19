@@ -15,7 +15,7 @@
             <div class="col-sm-12 portlets">
                 <div class="widget">
                     <div class="widget-header transparent">
-                        <h2><strong>Contact</strong> Form</h2>
+                        <h2><strong>Add</strong> Product</h2>
                         <div class="additional-btn">
                             <a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
                             <a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
@@ -26,7 +26,6 @@
                         <form role="form" id="contactForm" action="{{route('create_product')}}" method="POST"
                               enctype="multipart/form-data">
                             @csrf
-
                             <div class="form-group">
                                 <label>Category</label>
                                 <select class="form-control" name="products[category_id]">
@@ -38,6 +37,9 @@
                             <div class="form-group">
                                 <label>Name</label>
                                 <input type="text" class="form-control" name="products[name]">
+                                @if($errors->has('products.name'))
+                                    <p>{{$errors->first('products.name')}}</p>
+                                @endif
                             </div>
                             <div class="variant row">
                                 @foreach ($attributes as $attribute)

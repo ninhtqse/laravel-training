@@ -3,6 +3,7 @@
 namespace Module\Products\Controllers;
 
 use Illuminate\Http\Request;
+use Module\Products\Requests\CreateProductRequest;
 use Module\Products\Services\ProductService;
 use Module\Products\Services\ProductDetailService;
 use Infrastructure\Http\Controller;
@@ -39,8 +40,9 @@ class ProductController extends Controller
         return view('admin.products.create_product', compact('results', 'attributes'));
     }
 
-    public function create(Request $request)
+    public function create(CreateProductRequest $request)
     {
+        dd($request->all());
         $products           = $request->products;
         $productDetails     = $request->product_details;
         $attributeProducts  = $request->attribute_products;
