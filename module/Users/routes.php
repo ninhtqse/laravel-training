@@ -1,4 +1,5 @@
 <?php 
+
 $router->group(['prefix'=>'/admin/users'],function() use($router){
     $router->get('/','UserController@getAll')->name('admin');
     $router->get('/dashboard','UserController@getDashboard')->name('dashboard');//module riêng (/admin)
