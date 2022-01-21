@@ -9,28 +9,21 @@ use Module\Products\Models\Order;
 
 class OrderDetail extends Model
 {
+  use Uuids;
 
-    use Uuids;
+  protected $table = 'order_details';
 
-    protected $table = 'order_details';
+  protected $guarded = [];
 
-    protected $guarded = [];
+  protected $keyType = 'string';
 
-    protected $keyType = 'string';
-
-    public function order()
-    {
-      return $this->belongsTo(Order::class);
-    }
-    
-    public function product_detail()
-    {
-      return $this->belongsTo(ProductDetail::class);
-    }
-
-
-   
-
-   
-
+  public function order()
+  {
+    return $this->belongsTo(Order::class);
+  }
+  
+  public function product_detail()
+  {
+    return $this->belongsTo(ProductDetail::class);
+  }
 }

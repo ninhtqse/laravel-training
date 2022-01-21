@@ -26,8 +26,8 @@ $router->group(['prefix'=>'/admin/categories'],function() use($router){
     $router->get('/delete/{id}','CategoryController@delete')->name('delete_category');
 });
 
-$router->group(['prefix'=>'/admin/users'],function() use($router){
-    $router->get('/list_order', 'OrderController@getAll')->name('get_order');
+$router->group(['prefix'=>'/admin/orders'],function() use($router){
+    $router->get('/', 'OrderController@getAll')->name('get_order');
     $router->get('/order/{id}', 'OrderController@getById')->name('get_order_detail');
     $router->post('/order/{id}', 'OrderController@editStatus')->name('edit_status');
 });
