@@ -1,5 +1,5 @@
 <?php
- 
+
 $router->group(['prefix'=>'/admin/products'],function() use($router){
     $router->get('/create','ProductController@getCreate')->name('get_create_product');
     $router->post('/create','ProductController@create')->name('create_product');
