@@ -142,28 +142,28 @@
           foreach ($attributes as $attribute){ ?>
           `<div class="form-group col-lg-6">
               <label>`+`<?php echo $attribute->name; ?>`+`</label>
-              <input type="text" class="form-control" name="attribute_products[${count}][<?php echo $attribute->id; ?>]">
+              <input type="text" class="form-control" name="attribute_products[${count}][<?php echo $attribute->id; ?>]" required>
           </div>`+
           <?php } ?>
           `
           <div class="form-group col-lg-6">
               <label>Price</label>
-              <input type="text" class="form-control" name="product_details[${count}][price]">
+              <input type="number" class="form-control" name="product_details[${count}][price]" required>
           </div>
           <div class="form-group col-lg-6">
               <label>Image</label>
               <br>
                 <img id='test${count}' class="view_image" style="max-height: 80px; max-width: 80px; margin-bottom: 10px;" >
                 <br>
-                <input onchange="document.getElementById('test${count}').src = window.URL.createObjectURL(this.files[0])" class="add_image" type="file" class="form-control" name="product_details[${count}][image]"  >
+                <input onchange="document.getElementById('test${count}').src = window.URL.createObjectURL(this.files[0])" class="add_image" type="file" class="form-control" name="product_details[${count}][image]"  required>
           </div>
           <div class="form-group col-lg-6">
               <label>Quantity</label>
-              <input type="text" class="form-control" name="product_details[${count}][quantity]">
+              <input type="number" class="form-control" name="product_details[${count}][quantity]" required>
           </div>
           <div class="form-group col-lg-6">
               <label>Description</label>
-              <input type="text" class="form-control" name="product_details[${count}][description]">
+              <input type="text" class="form-control" name="product_details[${count}][description]" required>
               <input type="text" class="form-control" style="display: none" name="product_details[${count}][id]" >
           </div>
           <div class="col-lg-6">

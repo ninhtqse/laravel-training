@@ -19,6 +19,10 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->tinyInteger('is_admin')->default(0);
+            $table->string('province_id')->nullable();
+            $table->string('district_id')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('commune_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

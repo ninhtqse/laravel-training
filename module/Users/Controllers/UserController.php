@@ -71,5 +71,10 @@ class UserController extends Controller{
         return redirect()->route('admin');
     }
 
+    public function getDashboard()
+    {
+        return view('admin.users.dashboard');
+    }
+
     
 }

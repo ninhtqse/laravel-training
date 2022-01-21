@@ -14,7 +14,14 @@ class UpdateProductRequest extends ApiRequest
     public function rules()
     {
         return [
-            'products'        => 'required|array'
+            'products'                      => 'required|array',
+            'products.name'                 => 'required',
+            'attribute_products'            => 'required|array',
+            'product_details'               => 'required|array',
+            'product_details.price'         => 'required|number',
+            'product_details.image'         => 'required',
+            'product_details.quantity'      => 'required|number',
+            'product_details.description'   => 'required',
         ];
     }
 

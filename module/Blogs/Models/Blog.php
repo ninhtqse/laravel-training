@@ -1,4 +1,5 @@
 <?php
+
 namespace Module\Blogs\Models;
 
 use Illuminate\Database\Eloquent\Model;

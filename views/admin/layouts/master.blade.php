@@ -84,7 +84,7 @@
                         <button class="button-menu-mobile open-left">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <h1 class="title">Form Validation</h1>
+                        {{-- <h1 class="title">Form Validation</h1> --}}
                         <ul class="nav navbar-nav navbar-right top-navbar">
                             <li>
                                 <!-- Search form -->
@@ -277,7 +277,6 @@
 
                         <li class='has_sub'><a href='javascript:void(0);'><i class="fa fa-th"></i>
                                 <span>Product</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span>
-                            </a>
                             <ul>
                                 <li><a href='{{route("get_all_attribute")}}'><span>List Product</span></a></li>
                             </ul>

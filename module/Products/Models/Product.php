@@ -1,4 +1,5 @@
 <?php
+
 namespace Module\Products\Models;
 
 use Infrastructure\Database\Eloquent\Model;
@@ -21,7 +22,7 @@ class Product extends Model
 
     public function product_details()
     {
-        return $this->hasMany(Product_detail::class);
+        return $this->hasMany(ProductDetail::class);
     }
 
 }

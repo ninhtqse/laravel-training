@@ -39,7 +39,7 @@
                         </div>
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" name="product_details[name]">
+                            <input type="text" class="form-control" name="product_details[name]" required>
                         </div>
 
                         <div class="variant row">
@@ -47,12 +47,12 @@
                             @foreach ($attributes as $attribute)
                             <div class="form-group col-lg-6">
                                 <label>{{$attribute->name}}</label>
-                                <input type="text" class="form-control" name="attribute_products[1][{{$attribute->id}}]">
+                                <input type="text" class="form-control" name="attribute_products[1][{{$attribute->id}}]" required>
                             </div>
                             @endforeach
                             <div class="form-group col-lg-6">
                                 <label>Price</label>
-                                <input type="text" class="form-control" name="product_details[1][price]">
+                                <input type="number" class="form-control" name="product_details[1][price]" required>
                             </div>
                             <div class="form-group col-lg-6">
                                 <label>Image</label>
@@ -62,11 +62,11 @@
                             </div>
                             <div class="form-group col-lg-6">
                                 <label>Quantity</label>
-                                <input type="text" class="form-control" name="product_details[1][quantity]">
+                                <input type="number" class="form-control" name="product_details[1][quantity]" required>
                             </div>
                             <div class="form-group col-lg-6">
                                 <label>Description</label>
-                                <input type="text" class="form-control" name="product_details[1][description]">
+                                <input type="text" class="form-control" name="product_details[1][description]" required>
                             </div>
                             <div class="col-lg-6">
                                 <p class="delete_variant" style="background:green;width:30px;height:30px;border-radius:5px;color:white;font-size:18px;text-align:center;line-height:30px;cursor:pointer;font-weight:bold">-</p>
@@ -101,26 +101,26 @@
           foreach ($attributes as $attribute){ ?>
           `<div class="form-group col-lg-6">
               <label>`+`<?php echo $attribute->name; ?>`+`</label>
-              <input type="text" class="form-control" name="attribute_products[${count}][<?php echo $attribute->id; ?>]">
+              <input type="text" class="form-control" name="attribute_products[${count}][<?php echo $attribute->id; ?>]" required>
           </div>`+
           <?php } ?>
           `
           <div class="form-group col-lg-6">
               <label>Price</label>
-              <input type="text" class="form-control" name="product_details[${count}][price]">
+              <input type="number" class="form-control" name="product_details[${count}][price]" required>
           </div>
           <div class="form-group col-lg-6">
               <label>Image</label>
-              <input type='file' onchange="readURL${count}(this);" name="product_details[1][image]" class="form-control" name="product_details[${count}][image]" />
+              <input type='file' onchange="readURL${count}(this);" name="product_details[1][image]" class="form-control" name="product_details[${count}][image]" required/>
                                     <img id="blah" src="#" alt="your image" />
           </div>
           <div class="form-group col-lg-6">
               <label>Quantity</label>
-              <input type="text" class="form-control" name="product_details[${count}][quantity]">
+              <input type="number" class="form-control" name="product_details[${count}][quantity]" required>
           </div>
           <div class="form-group col-lg-6">
               <label>Description</label>
-              <input type="text" class="form-control" name="product_details[${count}][description]">
+              <input type="text" class="form-control" name="product_details[${count}][description]" required>
           </div>
           <div class="col-lg-6">
                                 <p class="delete_variant" style="background:green;width:30px;height:30px;border-radius:5px;color:white;font-size:18px;text-align:center;line-height:30px;cursor:pointer;font-weight:bold">-</p>
