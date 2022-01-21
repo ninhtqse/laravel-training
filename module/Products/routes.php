@@ -1,4 +1,5 @@
-<?php 
+<?php
+ 
 $router->group(['prefix'=>'/admin/products'],function() use($router){
     $router->get('/create','ProductController@getCreate')->name('get_create_product');
     $router->post('/create','ProductController@create')->name('create_product');
@@ -16,7 +17,6 @@ $router->group(['prefix'=>'/admin/attributes'],function() use($router){
     $router->get('/delete/{id}','AttributeController@delete')->name('delete_attribute');
 });
 
-
 $router->group(['prefix'=>'/admin/categories'],function() use($router){
     $router->get('/create','CategoryController@getCreate')->name('get_create_category');
     $router->post('/create','CategoryController@create')->name('create_category');
@@ -24,4 +24,10 @@ $router->group(['prefix'=>'/admin/categories'],function() use($router){
     $router->get('/edit/{id}','CategoryController@showEdit')->name('get_edit_category');
     $router->post('/edit/{id}','CategoryController@edit')->name('edit_category');
     $router->get('/delete/{id}','CategoryController@delete')->name('delete_category');
+});
+
+$router->group(['prefix'=>'/admin/users'],function() use($router){
+    $router->get('/list_order', 'OrderController@getAll')->name('get_order');
+    $router->get('/order/{id}', 'OrderController@getById')->name('get_order_detail');
+    $router->post('/order/{id}', 'OrderController@editStatus')->name('edit_status');
 });

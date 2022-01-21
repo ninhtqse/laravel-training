@@ -8,8 +8,5 @@ $router->group(['prefix'=>'/admin/users'],function() use($router){
     $router->post('/edit/{id}', 'UserController@edit')->name('edit');
     $router->get('/delete/{id}', 'UserController@delete')->name('delete_user');
     $router->get('/lockUser/{id}/{active}', 'UserController@lockUser')->name('lock_user');
-    $router->get('/list_order', 'OrderController@getAll')->name('get_order');
-    $router->get('/order/{id}', 'OrderController@getById')->name('get_order_detail');
-    $router->post('/order/{id}', 'OrderController@editStatus')->name('edit_status');
     
 });

@@ -1,9 +1,9 @@
 <?php 
 
-namespace Module\Users\Services;
+namespace Module\Products\Services;
 
-use Module\Users\Repositories\OrderDetailRepository;
-use Module\Users\Repositories\OrderRepository;
+use Module\Products\Repositories\OrderDetailRepository;
+use Module\Products\Repositories\OrderRepository;
 use Module\Products\Repositories\AttributeRepository;
 use Module\Products\Repositories\ProductDetailRepository;
 use Module\Products\Repositories\AttributeProductRepository;

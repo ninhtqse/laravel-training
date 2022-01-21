@@ -1,5 +1,5 @@
 <?php 
-$router->group(['prefix'=>'/admin/blog'],function() use($router){
+$router->group(['prefix'=>'/admin/blogs'],function() use($router){
     $router->get('/create','BlogController@getCreate')->name('get_create_blog');
     $router->post('/create','BlogController@create')->name('create_blog');
     $router->get('','BlogController@getAll')->name('get_list_blog');

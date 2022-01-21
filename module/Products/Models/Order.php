@@ -1,12 +1,12 @@
 <?php
 
-namespace Module\Users\Models;
+namespace Module\Products\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Infrastructure\Database\Traits\Uuids;
 use Module\Users\Models\User;
 use Module\Users\Models\Customer;
-use Module\Users\Models\OrderDetail;
+use Module\Products\Models\OrderDetail;
 
 
 class Order extends Model
@@ -39,23 +39,23 @@ class Order extends Model
       return $this->hasMany(OrderDetail::class);
     }
 
-    public function setLocationAttribute($value)
-    {
-      $this->location = $value;
-    }
+    // public function setLocationAttribute($value)
+    // {
+    //   $this->location = $value;
+    // }
 
-    public function getLocationAttribute()
-    {
-      return 'abc';
-      dd(1);
-      if($this->type == 0){
-        dd($this->customer);
-        // province_id
-        // district_id
-        // commune_id
-      }
+    // public function getLocationAttribute()
+    // {
+    //   return 'abc';
+    //   dd(1);
+    //   if($this->type == 0){
+    //     dd($this->customer);
+    //     // province_id
+    //     // district_id
+    //     // commune_id
+    //   }
 
-    }
+    // }
 
     
 

@@ -1,9 +1,9 @@
 <?php 
 
-namespace Module\Users\Repositories;
+namespace Module\Products\Repositories;
 
 use Infrastructure\Database\Eloquent\Repository;
-use Module\Users\Models\OrderDetail;
+use Module\Products\Models\OrderDetail;
 
 class OrderDetailRepository extends Repository
 {

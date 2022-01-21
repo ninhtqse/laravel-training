@@ -1,9 +1,9 @@
 <?php
 
-namespace Module\Users\Controllers;
+namespace Module\Products\Controllers;
 
 use Illuminate\Http\Request;
-use Module\Users\Services\OrderService;
+use Module\Products\Services\OrderService;
 use Infrastructure\Http\Controller;
 
 class OrderController extends Controller

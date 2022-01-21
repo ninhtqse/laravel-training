@@ -1,11 +1,11 @@
 <?php
 
-namespace Module\Users\Models;
+namespace Module\Products\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Infrastructure\Database\Traits\Uuids;
 use Module\Products\Models\ProductDetail;
-use Module\Users\Models\Order;
+use Module\Products\Models\Order;
 
 class OrderDetail extends Model
 {
