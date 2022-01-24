@@ -2,6 +2,7 @@
 
 $router->group(['prefix'=>'/admin/products'],function() use($router){
     $router->get('/create','ProductController@getCreate')->name('get_create_product');
+    $router->get('/','ProductController@getAll')->name('get_all_product');
     $router->post('/create','ProductController@create')->name('create_product');
     $router->get('/','ProductController@getAll')->name('get_product');
     $router->get('/edit/{id}','ProductController@getByIdProduct')->name('get_edit_product');

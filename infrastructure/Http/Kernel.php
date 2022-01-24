@@ -54,5 +54,7 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'check_login'=> \Infrastructure\Auth\Middleware\CheckLogin::class,
+        'check_login_web'=> \Infrastructure\Auth\Middleware\CheckLoginWeb::class,
+        'check_web'=> \Infrastructure\Auth\Middleware\CheckWeb::class,
     ];
 }

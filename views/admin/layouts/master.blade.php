@@ -273,20 +273,13 @@
                             </ul>
                         </li>
 
-                        
-
-                        <li class='has_sub'><a href='javascript:void(0);'><i class="fa fa-th"></i>
-                                <span>Product</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span>
+                        <li class='has_sub'><a href='javascript:void(0);'><i class="fa fa-check-square-o"></i> <span>Product</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
                             <ul>
-                                <li><a href='{{route("get_all_attribute")}}'><span>List Product</span></a></li>
-                            </ul>
-                            <ul>
+                              <li><a href='{{route("get_all_attribute")}}'><span>List Product</span></a></li>
                                 <li><a href='{{route("get_all_attribute")}}'><span>List Attribute</span></a></li>
-                            </ul>
-                            <ul>
                                 <li><a href='{{route("get_all_category")}}'><span>List Category</span></a></li>
                             </ul>
-                        </li>
+                          </li>
 
                     </ul>
 

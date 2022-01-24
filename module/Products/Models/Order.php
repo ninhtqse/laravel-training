@@ -13,31 +13,31 @@ class Order extends Model
 {
   use Uuids;
 
-    protected $table = 'orders';
+  protected $table = 'orders';
 
-    protected $guarded = [];
+  protected $guarded = [];
 
-    protected $keyType = 'string';
+  protected $keyType = 'string';
 
-    protected $location;
+  protected $location;
 
-    protected $appends = ['location'];
-    
+  protected $appends = ['location'];
+  
 
-    public function user()
-    {
-      return $this->belongsTo(User::class);
-    }
+  public function user()
+  {
+    return $this->belongsTo(User::class);
+  }
 
-    public function customer()
-    {
-      return $this->belongsTo(Customer::class);
-    }
+  public function customer()
+  {
+    return $this->belongsTo(Customer::class);
+  }
 
-    public function order_details()
-    {
-      return $this->hasMany(OrderDetail::class);
-    }
+  public function order_details()
+  {
+    return $this->hasMany(OrderDetail::class);
+  }
 
     // public function setLocationAttribute($value)
     // {

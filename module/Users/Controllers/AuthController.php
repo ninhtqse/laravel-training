@@ -11,7 +11,6 @@ class AuthController extends Controller{
 
     public function login()
     {
-        // dd(Auth::check());
         return view('admin.login.login');
     }
 
@@ -25,13 +24,10 @@ class AuthController extends Controller{
             session()->flash('LoginFail', true);
             return redirect()->route('login');
         }
-
     }
 
     public function logout() {
         Auth::logout();
         return redirect()->route('login');
       }
-
-    
 }

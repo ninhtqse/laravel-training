@@ -33,7 +33,6 @@ class ProductService
 
     public function create($products, $name, $productDetail,$attributeProduct)
     {
-
         \DB::begintransaction();
         try {
             $products['name'] = $name;
@@ -63,7 +62,6 @@ class ProductService
            \DB::rollback();
            throw $e;
         }
-        
     }
 
     public function getByIdProduct($id)
@@ -78,8 +76,6 @@ class ProductService
         $data['attributeProduct'] = $attributeProduct;
         return $data;
     }
-
-
 
     public function edit($id, $data)
     {
@@ -128,7 +124,6 @@ class ProductService
         return [$productDetail, $attribute_products];
     }
 
-
     private function splitArray($data)
     {
         $products               = [];
@@ -148,7 +143,12 @@ class ProductService
     {
         $this->productRepository->getModel()->where('id', $productId)->update($categoryId);
     }
-    
+
+    public function getAll()
+    {
+        $data = $this->productRepository->getModel()->paginate(5);
+        return $data;
+    }
 
     
 

@@ -22,14 +22,12 @@ class BlogService
     public function getAll()
     {
         $data = $this->blogRepository->getModel()->paginate(5);
-        // $data = $this->userRepository->get();
         return $data;
     }
 
     public function showEdit($id)
     {
         $data = $this->blogRepository->getModel()->where('id',$id)->first();
-        // dd($data);
         return $data;
     }
 

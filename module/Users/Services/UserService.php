@@ -3,8 +3,6 @@
 namespace Module\Users\Services;
 
 use Module\Users\Repositories\UserRepository;
-
-
 class UserService{
     protected $userRepository;
 
@@ -16,7 +14,6 @@ class UserService{
     public function getAll()
     {
         $data = $this->userRepository->getModel()->paginate(5);
-        // $data = $this->userRepository->get();
         return $data;
     }
 
@@ -28,13 +25,11 @@ class UserService{
     public function showEdit($id)
     {
         $data = $this->userRepository->getModel()->where('id',$id)->first();
-        // dd($data);
         return $data;
     }
 
     public function edit($user, $id)
     {
-        // dd($user);
         $item = $this->userRepository->getModel()->where('id',$id);
         $data = $item->update($user);
         return $data;
@@ -52,5 +47,4 @@ class UserService{
         $data = $item->update(['active'=>$active]);
         return $data;
     }
-
 }

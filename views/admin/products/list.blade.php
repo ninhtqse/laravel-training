@@ -8,7 +8,7 @@
     <div class="col-md-12">
     <div class="widget">
     <div class="widget-header transparent">
-    <h2><strong></strong> CRUD Table</h2>
+    <h2><strong></strong> List Product </h2>
     <div class="additional-btn">
     <a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
     <a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
@@ -38,9 +38,8 @@
     <table data-sortable class="table table-hover table-striped">
     <thead>
         <tr>
-            <th>Id</th>
+            <th>No</th>
             <th>Name</th>
-            <th>Price</th>
             <th>Category</th>
             <th data-sortable="false">Option</th>
         </tr>
@@ -50,27 +49,21 @@
         @foreach ($results as $key => $result)
         <tr>
             <td>{{++$key}}</td>
-            <td><a href="mailto:#">{{$result->name}}</a></td>
-            <td>{{$result->price}}</td>
-            <td>{{$result->product->category->name}}</td>
+            <td><a href="">{{$result->name}}</a></td>
+            <td>{{$result->category->name}}</td>
             <td>
                 <div class="btn-group btn-group-xs">
                     <a data-toggle="tooltip" title="Edit" class="btn btn-default" href="{{route('get_edit_product', $result->id)}}"><i class="fa fa-edit"></i></a>
-                    <a data-toggle="tooltip" title="Delete" class="btn btn-default" href="{{route('delete_user', $result->id)}}"><i class="fa fa-trash-o"></i></a>
                 </div>
             </td>
         </tr>
         @endforeach
-        
-    
-        
-        
     </tbody>
     </table>
     </div>
 
     <div class="data-table-toolbar">
-    {!!h_paginate($results)!!}
+    {{-- {!!h_paginate($results)!!} --}}
     </div>
     </div>
     </div>

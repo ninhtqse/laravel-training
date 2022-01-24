@@ -3,7 +3,7 @@
 namespace Module\Products\Models;
 
 use Infrastructure\Database\Eloquent\Model;
-use Module\Categories\Models\Category;
+use Module\Products\Models\Category;
 use Infrastructure\Database\Traits\Uuids;
 
 class Product extends Model
@@ -12,8 +12,6 @@ class Product extends Model
     protected $table = 'products';
 
     protected $guarded = [];
-
-   
 
     public function category()
     {
@@ -24,5 +22,4 @@ class Product extends Model
     {
         return $this->hasMany(ProductDetail::class);
     }
-
 }

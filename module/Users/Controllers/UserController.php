@@ -4,8 +4,10 @@ namespace Module\Users\Controllers;
 
 use Illuminate\Http\Request;
 use Module\Users\Requests\CreateUserRequest;
+use Module\Users\Requests\LoginRequest;
 use Module\Users\Services\UserService;
 use Infrastructure\Http\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller{
 
@@ -19,8 +21,6 @@ class UserController extends Controller{
     public function getAll()
     {
         $results = $this->userService->getAll();
-        // dd($result);
-        // return view('admin.users.index');
         return view('admin.users.index', compact('results'));
 
     }
@@ -33,27 +33,20 @@ class UserController extends Controller{
 
     public function createUser(CreateUserRequest $request)
     {
-        // dd(1);
         $user= $request->users;
         $result = $this->userService->create($user);
-        // dd($result);
         return redirect()->route('admin');
     }
 
     public function showEdit($id)
     {
-        // dd(1);
-        // $id = $request->id;
         $results = $this->userService->showEdit($id);
-        // dd($results->id);
         return view('admin.users.edit', compact('results'));
-        // return view('admin.users.edit');
 
     }
 
     public function edit(Request $request, $id)
     {
-        // dd(1);
         $user= $request->users;
         $this->userService->edit($user, $id);
         return redirect()->route('admin');
@@ -76,5 +69,43 @@ class UserController extends Controller{
         return view('admin.users.dashboard');
     }
 
+    public function getRegister()
+    {
+        return view('client.login.register');
+    }
+
+    public function register(CreateUserRequest $request)
+    {
+        // dd(1);
+        $user= $request->users;
+        if(isset($user['is_admin'])){
+            unset($user['is_admin']);
+        }
+        $user['is_admin'] = 0;
+        $this->userService->create($user);
+        return redirect()->route('login_web');
+    }
+
+    public function login(LoginRequest $request)
+    {
+        $email = $request["login"]['email'];
+        $password = $request["login"]['password'];
+        if (Auth::attempt(['email'=> $email,'password' => $password]) ){
+            return redirect()->route('product_web');
+        }else{
+            session()->flash('LoginFail', true);
+            return redirect()->route('login_web');
+        }
+    }
+
+    public function getLogin()
+    {
+        return view('client.login.login');
+    }
+
+    public function logout() {
+        Auth::logout();
+        return redirect()->route('login_web');
+      }
     
 }

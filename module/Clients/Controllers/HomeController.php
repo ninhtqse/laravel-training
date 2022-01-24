@@ -20,4 +20,19 @@ class HomeController extends Controller
     {
         return view('client.home.privacy');
     }
+
+    public function forgotPassword()
+    {
+        return view('client.login.forgotpassword');
+    }
+
+    public function shoppingCart()
+    {
+        return view('client.products.shopping_cart');
+    }
+
+    public function checkout()
+    {
+        return view('client.products.checkout');
+    }
 }

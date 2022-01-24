@@ -15,7 +15,7 @@ class CreateUserRequest extends ApiRequest
     {
         return [
             'users'        => 'required|array',
-            'users.email'  => 'required|email',
+            'users.email'  => 'required|email|unique:users,email',
             'users.password'  => 'required',
             'users.name'  => 'required',
         ];
