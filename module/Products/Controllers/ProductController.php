@@ -41,7 +41,7 @@ class ProductController extends Controller
 
     public function getCreate()
     {
-        $results = $this->categoryService->getAll();
+        $results = $this->categoryService->getAllForHome();
         $attributes = $this->attributeService->getAll();
         return view('admin.products.create', compact('results', 'attributes'));
     }
@@ -54,13 +54,13 @@ class ProductController extends Controller
         unset($productDetail['name']);
         $attributeProduct = $request['attribute_products'];
         $this->productService->create($products, $name, $productDetail, $attributeProduct);
-        return 'abcxyz';
+        return redirect('/admin/products');
         
     }
 
     public function getByIdProduct($id)
     {
-        $results = $this->categoryService->getAll();
+        $results = $this->categoryService->getAllForHome();
         $attributes = $this->attributeService->getAll();
         $data = $this->productService->getByIdProduct($id);
         return view('admin.products.edit', compact('data', 'results', 'attributes'));

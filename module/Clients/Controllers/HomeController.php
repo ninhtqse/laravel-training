@@ -3,12 +3,23 @@
 namespace Module\Clients\Controllers;
 
 use Infrastructure\Http\Controller;
+use Module\Products\Services\CategoryService;
 
 class HomeController extends Controller
 {
+    protected $categoryService;
+
+    public function __construct(CategoryService $categoryService)
+    {
+        $this->categoryService = $categoryService;
+    }
+
     public function index()
     {
-        return view('client.home.home');
+        $data['category'] = $this->categoryService->getAllForHome();
+        // dd($data);
+        // return view('client.home.home');
+        return view('client.home.home', compact('data'));
     }
 
     public function about()
@@ -31,4 +42,5 @@ class HomeController extends Controller
     {
         return view('client.products.checkout');
     }
+
 }

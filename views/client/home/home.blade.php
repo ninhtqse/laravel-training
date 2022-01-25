@@ -409,53 +409,18 @@ $(document).ready(function () {
 <div id="banner">
 <div id="bannerCol">
 <ul>
-    <li><a href="#Shippng_content" class="inline fade"><img
-                src="../client_html/img/shop/banner_shipping_pc.png"
-                alt="ショップの注意事項" class="pc"><img
-                src="../client_html/img/shop/banner_shipping_sp.png"
-                alt="ショップの注意事項" class="sp"></a></li>
+    @foreach($data['category'] as $category_parent)
+        @if($category_parent->parent_id == null)
+            <li><a href="#Shippng_content" class="inline fade"><img
+                        src="../client_html/img/shop/{{$category_parent->images}}"
+                        alt="{{$category_parent->name}}" class="pc"><img
+                        src="../client_html/img/shop/{{$category_parent->images}}"
+                        alt="{{$category_parent->name}}" class="sp"></a>
+            </li>
+        @endif
+    @endforeach
+    
 
-    <li><a href="#Faq_content" class="inline fade"><img
-                src="../client_html/img/shop/banner_faq_pc.png"
-                alt="Q&A" class="pc"><img
-                src="../client_html/img/shop/banner_faq_sp.png"
-                alt="Q&A" class="sp"></a></li>
-
-    <li><a href="categories/1612755.html" class="fade"><img
-                src="../client_html/img/shop/banner_recommend_pc.png"
-                alt="New Arrival" class="pc"><img
-                src="../client_html/img/shop/banner_recommend_sp.png"
-                alt="New Arrival" class="sp"></a></li>
-
-    <li><a href="categories/1803790.html" class="fade"><img
-                src="../client_html/img/shop/banner_ranking_pc.png"
-                alt="Weekly Ranking" class="pc"><img
-                src="../client_html/img/shop/banner_ranking_sp.png"
-                alt="Weekly Ranking" class="sp"></a></li>
-
-    <li><a href="categories/1623874.html" class="fade"><img
-                src="../client_html/img/shop/banner_nexthit_pc.png"
-                alt="Nex Hit" class="pc"><img
-                src="../client_html/img/shop/banner_nexthit_sp.png"
-                alt="Nex Hit" class="sp"></a></li>
-
-    <li><a href="categories/1991260.html" class="fade"><img
-                src="../client_html/img/shop/banner_fashionista_pc.png"
-                alt="FASHIONISTA" class="pc"><img
-                src="../client_html/img/shop/banner_fashionista_sp.png"
-                alt="FASHIONISTA" class="sp"></a></li>
-
-    <li><a href="categories/1463951.html" class="fade"><img
-                src="../client_html/img/shop/banner_mens_pc.png"
-                alt="MENS" class="pc"><img
-                src="../client_html/img/shop/banner_mens_sp.png"
-                alt="MENS" class="sp"></a></li>
-
-    <li><a href="categories/1463950.html" class="fade"><img
-                src="../client_html/img/shop/banner_ladies_pc.png"
-                alt="LADIES" class="pc"><img
-                src="../client_html/img/shop/banner_ladies_sp.png"
-                alt="LADIES" class="sp"></a></li>
 </ul>
 </div><!-- / #bannerCol -->
 </div><!-- / #banner -->
@@ -465,77 +430,29 @@ $(document).ready(function () {
 <!--========================================-->
 <div id="categories">
 <div id="categoriesCol">
-<p class="mensTitle sp"><img
-        src="../client_html/img/shop/categories_ttl_mens.png"
-        alt="MENS"></p>
-<div class="mens">
-    <p class="ttl pc"><img
-            src="../client_html/img/shop/categories_ttl_mens.png"
-            alt="MENS"></p>
-    <ul>
-        <li><a href="categories/1463967.html" class="fade"><img
-                    src="../client_html/img/shop/categories_tops.png"
-                    alt="tops"></a></li>
-        <li><a href="categories/1463968.html" class="fade"><img
-                    src="../client_html/img/shop/categories_outer.png"
-                    alt="outer"></a></li>
-        <li><a href="categories/1463969.html" class="fade"><img
-                    src="../client_html/img/shop/categories_bottoms.png"
-                    alt="bottoms"></a></li>
-        <li><a href="categories/1463970.html" class="fade"><img
-                    src="../client_html/img/shop/categories_setup.png"
-                    alt="set-up"></a></li>
-        <li><a href="categories/1463972.html" class="fade"><img
-                    src="../client_html/img/shop/categories_bag.png"
-                    alt="bag"></a></li>
-        <li><a href="categories/1992198.html" class="fade"><img
-                    src="../client_html/img/shop/categories_shoes.png"
-                    alt="shoes"></a></li>
-        <li><a href="categories/1463971.html" class="fade"><img
-                    src="../client_html/img/shop/categories_goods.png"
-                    alt="goods"></a></li>
-        <li><a href="categories/1691390.html" class="fade"><img
-                    src="../client_html/img/shop/categories_other.png"
-                    alt="other"></a></li>
-    </ul>
-</div>
-<p class="ladiesTitle sp"><img
-        src="../client_html/img/shop/categories_ttl_ladies.png"
-        alt="LADIES"></p>
-<div class="ladies">
-    <p class="ttl pc"><img
-            src="../client_html/img/shop/categories_ttl_ladies.png"
-            alt="LADIES"></p>
-    <ul>
-        <li><a href="categories/1463955.html" class="fade"><img
-                    src="../client_html/img/shop/categories_tops.png"
-                    alt="tops"></a></li>
-        <li><a href="categories/1463956.html" class="fade"><img
-                    src="../client_html/img/shop/categories_outer.png"
-                    alt="outer"></a></li>
-        <li><a href="categories/1463958.html" class="fade"><img
-                    src="../client_html/img/shop/categories_bottoms_ladies.png"
-                    alt="bottoms"></a></li>
-        <li><a href="categories/1463959.html" class="fade"><img
-                    src="../client_html/img/shop/categories_setup.png"
-                    alt="set-up"></a></li>
-        <li><a href="categories/1463963.html" class="fade"><img
-                    src="../client_html/img/shop/categories_dress.png"
-                    alt="dress"></a></li>
-        <li><a href="categories/1463966.html" class="fade"><img
-                    src="../client_html/img/shop/categories_bag.png"
-                    alt="bag"></a></li>
-        <li><a href="categories/1992199.html" class="fade"><img
-                    src="../client_html/img/shop/categories_shoes.png"
-                    alt="shoes"></a></li>
-        <li><a href="categories/1463964.html" class="fade"><img
-                    src="../client_html/img/shop/categories_goods.png"
-                    alt="goods"></a></li>
-        <li><a href="categories/1691393.html" class="fade"><img
-                    src="../client_html/img/shop/categories_other.png"
-                    alt="other"></a></li>
-    </ul>
-</div>
+    @foreach($data['category'] as $category_parent)
+        @if($category_parent->name == 'mens'||$category_parent->name == 'ladies')
+            <p class="mensTitle sp"><img
+                    src="../client_html/img/shop/categories_ttl_{{$category_parent->name}}.png"
+                    alt="{{$category_parent->name}}"></p>
+            <div class="{{$category_parent->name}}">
+                <p class="ttl pc"><img
+                        src="../client_html/img/shop/categories_ttl_{{$category_parent->name}}.png"
+                        alt="{{$category_parent->name}}"></p>
+                <ul>
+                    @foreach($data['category'] as $category)
+                        @if($category->parent_id == $category_parent->id)
+                            <li><a href="#" class="fade"><img
+                                        src="../client_html/img/shop/{{$category->images}}"
+                                        alt="tops">
+                                </a>
+                            </li>
+                        @endif
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+    @endforeach
 </div><!-- / #categoriesCol -->
 </div><!-- / #categories -->
 
@@ -559,154 +476,6 @@ $.ajax({
 });
 </script>
 
-<div id="recommend">
-<h2 class="ttl"><span><img src="../client_html/img/shop/recommend_ttl.png"
-        alt="NEW ARRIVAL"></span>
-<h2>
-    <div id="recommendCol">
-        <ul>
-        </ul>
-        <p class="more_btn"><a href="categories/1612755.html"><img
-                    src="../client_html/img/shop/btn_all.png"
-                    alt="view all"></a></p>
-    </div><!-- / #recommendCol -->
-</div><!-- / #recommend -->
-
-<!--========================================-->
-<!--ranking ここから/-->
-<!--========================================-->
-<script type="text/javascript">
-$(function () {
-$("#rankingCol ul li:nth-child(1) p").load(
-    "categories/1803790.html#products ul.product_list li:nth-child(1) a");
-$("#rankingCol ul li:nth-child(2) p").load(
-    "categories/1803790.html#products ul.product_list li:nth-child(2) a");
-$("#rankingCol ul li:nth-child(3) p").load(
-    "categories/1803790.html#products ul.product_list li:nth-child(3) a");
-$("#rankingCol ul li:nth-child(4) p").load(
-    "categories/1803790.html#products ul.product_list li:nth-child(4) a");
-$("#rankingCol ul li:nth-child(5) p").load(
-    "categories/1803790.html#products ul.product_list li:nth-child(5) a");
-$("#rankingCol ul li:nth-child(6) p").load(
-    "categories/1803790.html#products ul.product_list li:nth-child(6) a");
-$("#rankingCol ul li:nth-child(7) p").load(
-    "categories/1803790.html#products ul.product_list li:nth-child(7) a");
-$("#rankingCol ul li:nth-child(8) p").load(
-    "categories/1803790.html#products ul.product_list li:nth-child(8) a");
-$("#rankingCol ul li:nth-child(9) p").load(
-    "categories/1803790.html#products ul.product_list li:nth-child(9) a");
-$("#rankingCol ul li:nth-child(10) p").load(
-    "categories/1803790.html#products ul.product_list li:nth-child(10) a");
-});
-</script>
-<div id="ranking">
-<h2 class="ttl"><span><img src="../client_html/img/shop/ranking_ttl.png"
-        alt="人気ランキング"></span>
-<h2>
-    <div id="rankingCol">
-        <ul>
-            <li><span class="num">1</span>
-                <p class="item"></p>
-            </li>
-            <li><span class="num">2</span>
-                <p class="item"></p>
-            </li>
-            <li><span class="num">3</span>
-                <p class="item"></p>
-            </li>
-            <li><span class="num">4</span>
-                <p class="item"></p>
-            </li>
-            <li><span class="num">5</span>
-                <p class="item"></p>
-            </li>
-            <li><span class="num">6</span>
-                <p class="item"></p>
-            </li>
-            <li><span class="num">7</span>
-                <p class="item"></p>
-            </li>
-            <li><span class="num">8</span>
-                <p class="item"></p>
-            </li>
-            <li><span class="num">9</span>
-                <p class="item"></p>
-            </li>
-            <li><span class="num">10</span>
-                <p class="item"></p>
-            </li>
-        </ul>
-
-        <div id="rankingCategory">
-            <div id="rankingCategoryCol">
-                <p class="mensTitle sp"><img
-                        src="../client_html/img/shop/ranking_ttl_mens_sp.png"
-                        alt="MENS"></p>
-                <div class="mens">
-                    <p class="ttl pc"><img
-                            src="../client_html/img/shop/ranking_ttl_mens_pc.png"
-                            alt="MENS"></p>
-                    <ul>
-                        <li><a href="categories/1991349.html" class="fade"><img
-                                    src="../client_html/img/shop/ranking_tops.png"
-                                    alt="tops"></a></li>
-                        <li><a href="categories/1991350.html" class="fade"><img
-                                    src="../client_html/img/shop/ranking_outer.png"
-                                    alt="outer"></a></li>
-                        <li><a href="categories/1991352.html" class="fade"><img
-                                    src="../client_html/img/shop/ranking_bottoms.png"
-                                    alt="bottoms"></a></li>
-                        <li><a href="categories/1991355.html" class="fade"><img
-                                    src="../client_html/img/shop/ranking_setup.png"
-                                    alt="set-up"></a></li>
-                        <li><a href="categories/1991364.html" class="fade"><img
-                                    src="../client_html/img/shop/ranking_bag.png"
-                                    alt="bag"></a></li>
-                        <li><a href="categories/1991365.html" class="fade"><img
-                                    src="../client_html/img/shop/ranking_shoes.png"
-                                    alt="shoes"></a></li>
-                    </ul>
-                </div>
-                <p class="ladiesTitle sp"><img
-                        src="../client_html/img/shop/ranking_ttl_ladies_sp.png"
-                        alt="LADIES"></p>
-                <div class="ladies">
-                    <p class="ttl pc"><img
-                            src="../client_html/img/shop/ranking_ttl_ladies_pc.png"
-                            alt="LADIES"></p>
-                    <ul>
-                        <li><a href="categories/1991368.html" class="fade"><img
-                                    src="../client_html/img/shop/ranking_tops.png"
-                                    alt="tops"></a></li>
-                        <li><a href="categories/1991369.html" class="fade"><img
-                                    src="../client_html/img/shop/ranking_outer.png"
-                                    alt="outer"></a></li>
-                        <li><a href="categories/1991370.html" class="fade"><img
-                                    src="../client_html/img/shop/ranking_bottoms.png"
-                                    alt="bottoms"></a></li>
-                        <li><a href="categories/1991371.html" class="fade"><img
-                                    src="../client_html/img/shop/ranking_skirt.png"
-                                    alt="skirt"></a></li>
-                        <li><a href="categories/1991645.html" class="fade"><img
-                                    src="../client_html/img/shop/ranking_setup.png"
-                                    alt="set-up"></a></li>
-                        <li><a href="categories/1991373.html" class="fade"><img
-                                    src="../client_html/img/shop/ranking_dress.png"
-                                    alt="dress"></a></li>
-                    </ul>
-                </div>
-            </div><!-- / #rankingCategoryCol -->
-        </div><!-- / #rankingCategory -->
-
-        <p class="more_btn"><a href="categories/1803790.html"><img
-                    src="../client_html/img/shop/btn_more.png"
-                    alt="view more"></a></p>
-    </div><!-- / #rankingCol -->
-</div><!-- / #ranking -->
-
-<!--========================================-->
-<!--products ここから/-->
-<!--========================================-->
 
 <section id="products">
 

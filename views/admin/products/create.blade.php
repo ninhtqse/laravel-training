@@ -111,8 +111,10 @@
           </div>
           <div class="form-group col-lg-6">
               <label>Image</label>
-              <input type='file' onchange="readURL${count}(this);" name="product_details[1][image]" class="form-control" name="product_details[${count}][image]" required/>
-                                    <img id="blah" src="#" alt="your image" />
+              <br>
+                <img id='test${count}' class="view_image" style="max-height: 80px; max-width: 80px; margin-bottom: 10px;" >
+                <br>
+                <input onchange="document.getElementById('test${count}').src = window.URL.createObjectURL(this.files[0])" class="add_image" type="file" class="form-control" name="product_details[${count}][image]"  required>
           </div>
           <div class="form-group col-lg-6">
               <label>Quantity</label>
@@ -121,6 +123,7 @@
           <div class="form-group col-lg-6">
               <label>Description</label>
               <input type="text" class="form-control" name="product_details[${count}][description]" required>
+              <input type="text" class="form-control" style="display: none" name="product_details[${count}][id]" >
           </div>
           <div class="col-lg-6">
                                 <p class="delete_variant" style="background:green;width:30px;height:30px;border-radius:5px;color:white;font-size:18px;text-align:center;line-height:30px;cursor:pointer;font-weight:bold">-</p>
@@ -129,22 +132,19 @@
       
       
       $('.append').append(html)
-
-      
       
       
     });
     $('body').on('click','.delete_variant',function(){
         $(this).parents('.variant').remove();
-      })
-  });
+    })
 
-
-  function uuidv4() {
-  return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-  );
-}
+    function uuidv4() {
+        return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+            (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+        );
+    }
+});
 
 
 
