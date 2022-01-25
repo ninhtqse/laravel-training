@@ -21,10 +21,6 @@ class HomeController extends Controller
         return view('client.home.privacy');
     }
 
-    public function forgotPassword()
-    {
-        return view('client.login.forgotpassword');
-    }
 
     public function shoppingCart()
     {

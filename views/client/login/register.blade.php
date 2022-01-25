@@ -77,7 +77,7 @@
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
 						<span class="label-input100 ">Commune</span>
 						<select class="form-control commune_id" name="users[commune_id]">
-						
+							<option></option>
 						</select>
 						<span class="focus-input100"></span>
 					</div>
@@ -142,17 +142,17 @@
 			$('.province_id').on('change',function(){
 				id = $(this).val();
 				console.log(id);
-				let arr = [];
-				$('.district_id').html("")
-				$('.commune_id').html("")
+				let arr1 = [];
+				$('.district_id').html("<option></option>")
+				$('.commune_id').html("<option></option>")
 				$.ajax(`/api/v1/locations?filter_groups[0][filters][1][key]=parent_code&filter_groups[0][filters][1][operator]=eq&filter_groups[0][filters][1][value]=${id}`, {
 					type: 'GET',  // http method
 					dataType: 'json', 
 					data: { myData: 'This is my data.' },  // data to submit
 					success: function (data, status, xhr) {
 						let html = ""
-						arr = data.data.locations;
-						arr.forEach(obj => {
+						arr1 = data.data.locations;
+						arr1.forEach(obj => {
 							   html += `<option value="${obj.code}">${obj.name}</option>`
     					});
 						console.log(html)
@@ -169,16 +169,16 @@
 			$('.district_id').on('change',function(){
 				id = $(this).val();
 				console.log(id);
-				let arr = [];
-				$('.commune_id').html("")
+				let arr2 = [];
+				$('.commune_id').html("<option></option>")
 				$.ajax(`/api/v1/locations?filter_groups[0][filters][1][key]=parent_code&filter_groups[0][filters][1][operator]=eq&filter_groups[0][filters][1][value]=${id}`, {
 					type: 'GET',  // http method
 					dataType: 'json', 
 					data: { myData: 'This is my data.' },  // data to submit
 					success: function (data, status, xhr) {
 						let html = ""
-						arr = data.data.locations;
-						arr.forEach(obj => {
+						arr2 = data.data.locations;
+						arr2.forEach(obj => {
 							   html += `<option value="${obj.code}">${obj.name}</option>`
     					});
 						$('.commune_id').append(html);

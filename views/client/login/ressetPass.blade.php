@@ -38,14 +38,15 @@
 					</span>
 				</div>
 
-				<form class="login100-form validate-form" action="{{route('send_mail_forgot_password')}}" method="POST">
+				<form class="login100-form validate-form" action="{{route('do_forgot_password')}}" method="POST">
 					@csrf
+
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-						<span class="label-input100">Email</span>
-						<input class="input100" type="text" name="email" placeholder="Enter email">
+						<span class="label-input100">Pass Word</span>
+						<input class="input100" type="text" name="password" placeholder="Enter pass word">
 						<span class="focus-input100"></span>
 					</div>
-
+					<input type="hidden" value="{{$token}}" name="token">
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							Confirm
