@@ -17,8 +17,6 @@ class HomeController extends Controller
     public function index()
     {
         $data['category'] = $this->categoryService->getAllForHome();
-        // dd($data);
-        // return view('client.home.home');
         return view('client.home.home', compact('data'));
     }
 

@@ -411,11 +411,10 @@ $(document).ready(function () {
 <ul>
     @foreach($data['category'] as $category_parent)
         @if($category_parent->parent_id == null)
-            <li><a href="#Shippng_content" class="inline fade"><img
+            <li><a href="{{route('product_web', $category_parent->id)}}"><img
                         src="../client_html/img/shop/{{$category_parent->images}}"
-                        alt="{{$category_parent->name}}" class="pc"><img
-                        src="../client_html/img/shop/{{$category_parent->images}}"
-                        alt="{{$category_parent->name}}" class="sp"></a>
+                        alt="{{$category_parent->name}}" class="pc">
+                </a>
             </li>
         @endif
     @endforeach
@@ -442,7 +441,7 @@ $(document).ready(function () {
                 <ul>
                     @foreach($data['category'] as $category)
                         @if($category->parent_id == $category_parent->id)
-                            <li><a href="#" class="fade"><img
+                            <li><a href="{{route('product_web', $category->id)}}" class="fade"><img
                                         src="../client_html/img/shop/{{$category->images}}"
                                         alt="tops">
                                 </a>
@@ -503,10 +502,10 @@ $.ajax({
                 success: function (data, status, xhr) {
                     page = page + 1
                     let html = ""
-                    console.log(data)
+                    // console.log(data)
                     arr = data.data.products;
                     arr.forEach(obj => {
-                        console.log(obj.product_details[0].price)
+                        // console.log(obj.product_details[0].price)
                            html += `<li class="column">
                                         <a href="items/43205155.html">
                                             <div class="image_container">
