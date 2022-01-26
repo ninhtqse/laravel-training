@@ -482,585 +482,8 @@ $.ajax({
 <h2 class="ttl"><span><img src="../client_html/img/shop/products_ttl.png"
         alt="人気ランキング"></span>
 <h2>
-
-
-
     <ul class="product_list row">
-        <li class="column">
-            <a href="items/42447580.html">
-                <div class="image_container">
-                    <img src="https://static.thebase.in/img/apps/itemlabel/Oval_hot_yw.png"
-                        class="label_image list">
-                    <p class="pht fade">
-                        <img src="../client_html/img/06eff108ad01ba1f6d56ffe76981ffedc2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="BL8089 LADIES HAPPY BAG" title="BL8089 LADIES HAPPY BAG"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">BL8089 LADIES HAPPY BAG</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥6,950</div>-->
-                    <div class="price">¥6,950</div>
-                    <!---/セール価格設定-->
 
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/42352153.html">
-                <div class="image_container">
-                    <img src="https://static.thebase.in/img/apps/itemlabel/Oval_hot_yw.png"
-                        class="label_image list">
-                    <p class="pht fade">
-                        <img src="../client_html/img/a7939ae3bd08987b5513a046436ce2a1c2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="BL8090 MENS HAPPY BAG" title="BL8090 MENS HAPPY BAG"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-
-                    <h2 class="show_on_hover">BL8090 MENS HAPPY BAG</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥7,950</div>-->
-                    <div class="price">¥7,950</div>
-                    <!---/セール価格設定-->
-                    <div class="soldout">
-                        <p>SOLD OUT</p>
-                    </div>
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/28247881.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/8979d33095905f357e0e2db151d72d67c2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="オリジナルコットンマスク BS5605" title="オリジナルコットンマスク BS5605"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">オリジナルコットンマスク BS5605</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥1,430</div>-->
-                    <div class="price">¥1,430</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/38332442.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/f29cf38a1b19e7e5ce4b9e59850efdb9c2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="プレーンハイネックスウェット BL7242" title="プレーンハイネックスウェット BL7242"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">プレーンハイネックスウェット BL7242</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥4,700</div>-->
-                    <div class="price">¥4,700</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/53735318.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/5c1cc72ac6c46716fbd2cd0690b92b60c2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="インパクトプリントスウェット BL9611" title="インパクトプリントスウェット BL9611"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">インパクトプリントスウェット BL9611</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥4,400</div>-->
-                    <div class="price">¥4,400</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/36854519.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/fc446c5a8e40d33bd61a775250eab3c3c2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="ワイドウォッシュデニムパンツ BL7112" title="ワイドウォッシュデニムパンツ BL7112"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">ワイドウォッシュデニムパンツ BL7112</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥3,800</div>-->
-                    <div class="price">¥3,800</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/56057567.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/6ce57c1d909a659a051baa4870f40403c2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="レタリングエコダウンジャケット BL9991" title="レタリングエコダウンジャケット BL9991"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">レタリングエコダウンジャケット BL9991</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥7,700</div>-->
-                    <div class="price">¥7,700</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/36607130.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/6160baa860d66dd9a6f25cb23b229581c2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="【FAST】クルーネックチェックプルオーバー WBL7055" title="【FAST】クルーネックチェックプルオーバー WBL7055"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">【FAST】クルーネックチェックプルオーバー WBL7055</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥4,600</div>-->
-                    <div class="price">¥4,600</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/55287108.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/da4f7e8c8cdb7a4a7a146c2194710d2dc2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="アーガイルショートニット RD9899" title="アーガイルショートニット RD9899"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">アーガイルショートニット RD9899</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥4,400</div>-->
-                    <div class="price">¥4,400</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/34709789.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/7868164799ecc7a7279304e72af1793ac2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="ユニセックスジャージーセットアップ RD6697" title="ユニセックスジャージーセットアップ RD6697"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">ユニセックスジャージーセットアップ RD6697</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥5,700</div>-->
-                    <div class="price">¥5,700</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/55171852.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/686a03f873f7732913ae545c7d5e2db7c2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="ユニセックスタイダイファーパーカー RD9871" title="ユニセックスタイダイファーパーカー RD9871"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">ユニセックスタイダイファーパーカー RD9871</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥4,400</div>-->
-                    <div class="price">¥4,400</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/50062072.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/261c89a8765cb4b1bfe7226f0459247ac2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="ダブルチェーンネックレス RD9090" title="ダブルチェーンネックレス RD9090"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">ダブルチェーンネックレス RD9090</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥2,900</div>-->
-                    <div class="price">¥2,900</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/35127628.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/9f95442e407f041d964dd38bb835146bc2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="ルーズニットカーディガン BL6726" title="ルーズニットカーディガン BL6726"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">ルーズニットカーディガン BL6726</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥5,400</div>-->
-                    <div class="price">¥5,400</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/54321722.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/e3d4251c790f1d7ec0aa0f37518bda46c2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="ゴシックロゴニット BL9720" title="ゴシックロゴニット BL9720" class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">ゴシックロゴニット BL9720</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥5,500</div>-->
-                    <div class="price">¥5,500</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/45967211.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/45a3f74a7e2c6b13a725f21a76a0235bc2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="ストリートサイドボタンパンツ BL8649" title="ストリートサイドボタンパンツ BL8649"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">ストリートサイドボタンパンツ BL8649</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥4,400</div>-->
-                    <div class="price">¥4,400</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/40909130.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/4d57195e2bd6d32012ce206fa204485fc2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="スウェットジップアップジャケット BL7842" title="スウェットジップアップジャケット BL7842"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">スウェットジップアップジャケット BL7842</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥5,900</div>-->
-                    <div class="price">¥5,900</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/36468857.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/c6e1991e400d9a70094a65dc3e381e2bc2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="ボアミリタリーコート RD7044" title="ボアミリタリーコート RD7044" class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">ボアミリタリーコート RD7044</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥7,100</div>-->
-                    <div class="price">¥7,100</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/56242508.html">
-                <div class="image_container">
-                    <img src="https://static.thebase.in/img/apps/itemlabel/Oval_hot_yw.png"
-                        class="label_image list">
-                    <p class="pht fade">
-                        <img src="../client_html/img/50bf21166e0ef2737fcaad8d98e4d7c1c2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="ハートプリントワイドパンツ RD10029" title="ハートプリントワイドパンツ RD10029"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">ハートプリントワイドパンツ RD10029</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥3,800</div>-->
-                    <div class="price">¥3,800</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/41497326.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/c6dba065765709751a99c1818e46c41dc2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="ダブルラインスウェットパンツ RD7952" title="ダブルラインスウェットパンツ RD7952"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">ダブルラインスウェットパンツ RD7952</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥4,500</div>-->
-                    <div class="price">¥4,500</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/36099327.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="https://baseec-img-mng.akamaized.net/images/item/origin/261c89a8765cb4b1bfe7226f0459247a.jpg?imformat=generic&q=90&im=Resize,width=500,type=normal"
-                            alt="グラフィックセーター RD6932" title="グラフィックセーター RD6932" class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">グラフィックセーター RD6932</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥5,900</div>-->
-                    <div class="price">¥5,900</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/56497262.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/5166eaabbbacc8a95bc470fdb5c53781c2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="ユニセックスフリースプルオーバー RD10079" title="ユニセックスフリースプルオーバー RD10079"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">ユニセックスフリースプルオーバー RD10079</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥4,300</div>-->
-                    <div class="price">¥4,300</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/54047872.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/ed636133b24620fd903113ca2759e9e3c2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="ユニセックスゴシックレタードニット RD9702" title="ユニセックスゴシックレタードニット RD9702"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">ユニセックスゴシックレタードニット RD9702</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥4,000</div>-->
-                    <div class="price">¥4,000</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/56244514.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/e4ad09553dbf769df52edc128fc0ce3ac2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="ユニセックスタートルネックニット RD10030" title="ユニセックスタートルネックニット RD10030"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">ユニセックスタートルネックニット RD10030</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥4,100</div>-->
-                    <div class="price">¥4,100</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
-        <li class="column">
-            <a href="items/43205155.html">
-                <div class="image_container">
-
-                    <p class="pht fade">
-                        <img src="../client_html/img/491111212bbd89dd849d0f835c74dde3c2c0.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=500,type=normal"
-                            alt="ユニセックスワンポイントロゴパーカー BL8255" title="ユニセックスワンポイントロゴパーカー BL8255"
-                            class="image-resize" />
-                    </p>
-                </div>
-                <div class="item-detail">
-                    <h2 class="show_on_hover">ユニセックスワンポイントロゴパーカー BL8255</h2>
-                    <!---セール価格設定
-            <div class="price show_on_hover">¥4,200</div>-->
-                    <div class="price">¥4,200</div>
-                    <!---/セール価格設定-->
-
-
-
-
-
-                </div>
-            </a>
-        </li>
     </ul>
     <div id="loading" style="display: none;width: 100%;"><img src="../client_html/img/loading.gif"
             style="padding: 20px 0;width: 220px;" /></div>
@@ -1069,47 +492,85 @@ $.ajax({
                 alt="view more"></span></p>
 </section>
 
+<script>
+    $(document).ready(function() {
+        let arr = [];
+        let page = 1;
+            $.ajax(`http://laravel-training.local:81/api/v1/products?includes[]=product_details&limit=4&page=${page}`, {
+                type: 'GET',  // http method
+                dataType: 'json', 
+                data: { myData: 'This is my data.' },  // data to submit
+                success: function (data, status, xhr) {
+                    page = page + 1
+                    let html = ""
+                    console.log(data)
+                    arr = data.data.products;
+                    arr.forEach(obj => {
+                        console.log(obj.product_details[0].price)
+                           html += `<li class="column">
+                                        <a href="items/43205155.html">
+                                            <div class="image_container">
 
-<script type="text/javascript">
-var process_flg = false;
-var end_flg = false;
-var v_max_page = $("#max_page").text();
-if (v_max_page == 1) {
-$(".more_btn").css('display', 'none');
-}
+                                                <p class="pht fade">
+                                                    <img src="../images/uploads/${obj.product_details[0].image}"
+                                                        alt="${obj.product_details[0].image}" title="${obj.product_details[0].image}"
+                                                    class="image-resize" />
+                                                </p>
+                                            </div>
+                                            <div class="item-detail">
+                                                <h2 class="show_on_hover">${obj.name}</h2>
+                                                <div class="price show_on_hover">¥${obj.product_details[0].price}</div>
+                                            </div>
+                                        </a>
+                                     </li>`
+                    });
+                    $('.product_list').append(html);
 
-//(window).bottom({proximity: 0.05});
-$(".more_btn").on('click', function () {
-if (process_flg == false && end_flg == false) {
-    var max_page = $("#max_page").text();
-    var next_page = $('#next_page').text();
-    if (eval(max_page) >= eval(next_page)) {
-        //$(".more_btn").css('display','none');
-        $.ajax({
-            url: "https://www.beepsheepshamp.com/load_items/" + next_page + "/my_theme_649/0",
-            dataType: 'html',
-            beforeSend: function () {
-                process_flg = true;
-                $('#loading').css('display', 'block');
-            },
-            success: function (data) {
-                $('#products ul.product_list').append(data);
-                next_page = eval(next_page) + 1;
-                $('#next_page').text(next_page);
-            },
-            complete: function () {
-                process_flg = false;
-                $('#loading').css('display', 'none');
-                if (eval(max_page) < eval(next_page)) {
-                    $('.more_btn').css('display', 'none');
-                }
-            }
+                },
+                    error: function (jqXhr, textStatus, errorMessage) {
+                            $('p').append('Error: ' + errorMessage);
+                        }
+
+            });
+        $('.more_btn').on('click',function(){
+            
+            $.ajax(`http://laravel-training.local:81/api/v1/products?includes[]=product_details&limit=4&page=${page}`, {
+                type: 'GET',  // http method
+                dataType: 'json', 
+                data: { myData: 'This is my data.' },  // data to submit
+                success: function (data, status, xhr) {
+                    page = page + 1
+                    let html = ""
+                    console.log(data)
+                    arr = data.data.products;
+                    arr.forEach(obj => {
+                        console.log(obj.product_details[0].price)
+                           html += `<li class="column">
+                                        <a href="items/43205155.html">
+                                            <div class="image_container">
+
+                                                <p class="pht fade">
+                                                    <img src="../images/uploads/${obj.product_details[0].image}"
+                                                        alt="${obj.product_details[0].image}" title="${obj.product_details[0].image}"
+                                                    class="image-resize" />
+                                                </p>
+                                            </div>
+                                            <div class="item-detail">
+                                                <h2 class="show_on_hover">${obj.name}</h2>
+                                                <div class="price show_on_hover">¥${obj.product_details[0].price}</div>
+                                            </div>
+                                        </a>
+                                     </li>`
+                    });
+                    $('.product_list').append(html);
+
+                },
+                    error: function (jqXhr, textStatus, errorMessage) {
+                            $('p').append('Error: ' + errorMessage);
+                        }
+            });
         });
-    } else {
-        end_flg = true;
-    }
-}
-});
+    });
 </script>
 
 <!--========================================-->
