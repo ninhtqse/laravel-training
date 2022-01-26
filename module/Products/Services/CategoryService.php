@@ -43,4 +43,10 @@ class CategoryService
         return $item;
     }
 
+    public function getAllForHome()
+    {
+        $item = $this->categoryRepository->get();
+        return $item;
+    }
+
 }

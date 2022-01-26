@@ -112,25 +112,6 @@
   $(document).ready(function(){
     $('.add_image').change(function(evt){
       
-
-        // var fileSelected = $(this).parents('.variant').find('.view_image');
-        // console.log(fileSelected);
-
-        // if(fileSelected){
-        //     console.log(1);
-
-        //     fileSelected.onchange = function() {
-        //     console.log(2);
-
-        //         var file = fileSelected.files[0];
-        //         var fileReader = new FileReader();
-        //         fileReader.onload = function() {
-        //             var url = fileReader.result;
-        //             $(this).parents('.variant').find('.view_image').src = url;
-        //         }
-        //         fileReader.readAsDataURL(file);
-        //     }
-        // }
     });
   
     
