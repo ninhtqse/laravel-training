@@ -2544,7 +2544,7 @@
                             arr.forEach(obj => {
                                 // console.log(obj.product_details[0].price)
                                 html += `<li class="column">
-                                        <a href="items/43205155.html">
+                                        <a href="/product_detail/${obj.id}">
                                             <div class="image_container">
 
                                                 <p class="pht fade">
