@@ -23,9 +23,8 @@ class OrderController extends Controller
 
     public function getById($id)
     {
-        $order = $this->orderService->getById($id);
-        // dd($order);
-        return view('admin.orders.detail', compact('order'));
+        [$order, $location] = $this->orderService->getById($id);
+        return view('admin.orders.detail', compact('order', 'location'));
     }
 
     public function editStatus(Request $request,$id)

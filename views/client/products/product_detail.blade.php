@@ -2730,9 +2730,9 @@
                                                 if(obj.quantity < 1){
                                                     $('.quantity_value').html('')
 
-                                                    $('.button_add').html(`<button type="submit" class="purchaseButton__btn purchaseButton__btn--outOfStock purchaseButton__btn--requestRestockMail x_restockMailNotificationModalOpen">Request restock notification</button>`)
+                                                    $('.button_add').html(`<button type="submit" class="purchaseButton__btn purchaseButton__btn--outOfStock purchaseButton__btn--requestRestockMail x_restockMailNotificationModalOpen" disabled>Request restock notification</button>`)
                                                 }else{
-                                                    $('.quantity_value').html(`<label for="amountSelect">Quantity (min: 1 max: ${obj.quantity}) </label> <input type="number" name="quantity" class="quantity" min="1" max="${obj.quantity}">`)
+                                                    $('.quantity_value').html(`<label for="amountSelect">Quantity (min: 1 max: ${obj.quantity}) </label> <input type="number" name="order_detail[quantity]" class="quantity" min="1" max="${obj.quantity}">`)
 
                                                     $('.button_add').html(`<button type="submit" class="purchaseButton__btn purchaseButton__btn--outOfStock purchaseButton__btn--requestRestockMail x_restockMailNotificationModalOpen">Add to cart</button>`)
                                                 }
@@ -2759,11 +2759,11 @@
                                                     arr1.forEach(obj => {
                                                         html += `<p class="price">¥${obj.price}</p>`
                                                         if(obj.quantity < 1){
-                                                    $('.button_add').html(`<button type="submit" class="purchaseButton__btn purchaseButton__btn--outOfStock purchaseButton__btn--requestRestockMail x_restockMailNotificationModalOpen">Request restock notification</button>`)
+                                                    $('.button_add').html(`<button type="submit" class="purchaseButton__btn purchaseButton__btn--outOfStock purchaseButton__btn--requestRestockMail x_restockMailNotificationModalOpen" disabled>Request restock notification</button>`)
                                                     $('.quantity_value').html('')
                                                 }else{
                                                     $('.button_add').html(`<button type="submit" class="purchaseButton__btn purchaseButton__btn--outOfStock purchaseButton__btn--requestRestockMail x_restockMailNotificationModalOpen">Add to cart</button>`)
-                                                    $('.quantity_value').html(`<label for="amountSelect">Quantity (min: 1 max: ${obj.quantity}) </label> <input type="number" name="quantity" class="quantity" min="1" max="${obj.quantity}">`)
+                                                    $('.quantity_value').html(`<label for="amountSelect">Quantity (min: 1 max: ${obj.quantity}) </label> <input type="number" name="order_detail[quantity]" class="quantity" min="1" max="${obj.quantity}">`)
 
                                                 }
                                                     });
@@ -2781,15 +2781,12 @@
                         </script>
                         <div style="clear:both;"></div>
                     </div>
-
-                    <form id="purchase_form" class="x_purchaseForm" name="menu"
-                        action="https://www.beepsheepshamp.com/cart/add/naughtyboy-base-shop" method="post"
-                        data-purchase-form="" data-disabled="true">
+                    <form id="purchase_form" class="x_purchaseForm" name="menu" action="{{route('add-cart')}}" method="post" data-purchase-form="" data-disabled="true">
+                        @csrf
                         <div id="itemSelect">
-                          
                             <div id="variationSelectWrap" class="purchaseElement" data-target-version="v2">
                                  <label for="valiationSelect">Variant</label> 
-                                    <select name="select" id="valiationSelect" class="product_detail_id" data-display-stock="0">
+                                    <select name="order_detail[product_detail_id]" id="valiationSelect" class="product_detail_id" data-display-stock="0">
                                         @foreach($data->product_details()->get() as $product_detail)
                                         <option value="{{$product_detail->id}}" data-stock="0">
                                             @foreach($attributes as $attribute)
@@ -2809,8 +2806,6 @@
                                 {{-- <input type="number" name="quantity" class="quantity" min="1" max="100"> --}}
                            </div>
                         </div> 
-                        <input type="hidden" name="shopID" value="naughtyboy-base-shop"> <input type="hidden"
-                            name="id" value="57590309">
                         <script>
                             if (!document.querySelector('form[data-purchase-form]')) {
                                 $('#valiationSelect').on('change', function () {

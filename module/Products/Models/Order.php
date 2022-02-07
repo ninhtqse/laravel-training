@@ -2,7 +2,7 @@
 
 namespace Module\Products\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Infrastructure\Database\Eloquent\Model;
 use Infrastructure\Database\Traits\Uuids;
 use Module\Users\Models\User;
 use Module\Users\Models\Customer;
@@ -16,8 +16,6 @@ class Order extends Model
   protected $table = 'orders';
 
   protected $guarded = [];
-
-  protected $keyType = 'string';
 
   protected $location;
 

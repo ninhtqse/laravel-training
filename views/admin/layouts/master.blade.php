@@ -278,6 +278,7 @@
                               <li><a href='/admin/products'><span>List Product</span></a></li>
                                 <li><a href='{{route("get_all_attribute")}}'><span>List Attribute</span></a></li>
                                 <li><a href='{{route("get_all_category")}}'><span>List Category</span></a></li>
+                                <li><a href='/admin/orders'><span>List Order</span></a></li>
                             </ul>
                           </li>
 

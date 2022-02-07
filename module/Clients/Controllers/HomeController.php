@@ -31,14 +31,4 @@ class HomeController extends Controller
     }
 
 
-    public function shoppingCart()
-    {
-        return view('client.products.shopping_cart');
-    }
-
-    public function checkout()
-    {
-        return view('client.products.checkout');
-    }
-
 }

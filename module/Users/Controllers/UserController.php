@@ -91,7 +91,7 @@ class UserController extends Controller{
         $email = $request["login"]['email'];
         $password = $request["login"]['password'];
         if (Auth::attempt(['email'=> $email,'password' => $password]) ){
-            return redirect()->route('product_web');
+            return redirect()->route('home_client');
         }else{
             session()->flash('LoginFail', true);
             return redirect()->route('login_web');

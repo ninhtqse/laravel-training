@@ -71,6 +71,7 @@
 <div class="form-group">
     <p>Shipping Cost: {{$order->shipping_cost}}</p> 
     <p>Total Price: {{$order->total_price}}</p> 
+    <p>Address: {{$location}}</p> 
 </div>
 <div class="widget-content padding">
     <form role="form" id="contactForm" action="{{route('edit_status', $order->id)}}" method="POST" enctype="multipart/form-data">
@@ -82,7 +83,7 @@
                     @if($order->status == 0)
                         selected
                     @endif
-                    value="0">Đang chuẩn bị</option>
+                    value="0">Đang trong giỏ hàng</option>
                     <option 
                     @if($order->status == 1)
                         selected

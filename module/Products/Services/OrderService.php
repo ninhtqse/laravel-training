@@ -8,6 +8,7 @@ use Module\Products\Repositories\AttributeRepository;
 use Module\Products\Repositories\ProductDetailRepository;
 use Module\Products\Repositories\AttributeProductRepository;
 use Module\Users\Repositories\LocationRepository;
+use Module\Users\Repositories\UserRepository;
 
 
 class OrderService
@@ -18,6 +19,7 @@ class OrderService
     protected $productDetailRepository;
     protected $locationRepository;
     protected $attributeProductRepository;
+    protected $userRepository;
 
     public function __construct(
         OrderRepository $orderRepository, 
@@ -25,7 +27,8 @@ class OrderService
         AttributeRepository $attributeRepository,
         ProductDetailRepository $productDetailRepository,
         LocationRepository $locationRepository,
-        AttributeProductRepository $attributeProductRepository
+        AttributeProductRepository $attributeProductRepository,
+        UserRepository $userRepository
         )
     {
         $this->orderRepository = $orderRepository;
@@ -34,6 +37,7 @@ class OrderService
         $this->productDetailRepository = $productDetailRepository;
         $this->locationRepository = $locationRepository;
         $this->attributeProductRepository = $attributeProductRepository;
+        $this->userRepository = $userRepository;
     }
 
     public function getAll()
@@ -44,7 +48,15 @@ class OrderService
 
     public function getById($id)
     {
-        return $this->orderRepository->getById($id);
+        $order =  $this->orderRepository->getById($id);
+        $user_id = $order->user_id;
+        $user = $this->userRepository->getById($user_id);
+        $province = $this->locationRepository->getModel()->where('code', $user->province_id)->first()->name;
+        $district = $this->locationRepository->getModel()->where('code', $user->district_id)->first()->name;
+        $commune = $this->locationRepository->getModel()->where('code', $user->commune_id)->first()->name;
+        $location = $province . ','. $district . ',' . $commune;
+        // dd($location);
+        return [$order, $location];
     }
 
     public function editStatus($orders, $id)

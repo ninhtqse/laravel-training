@@ -8,6 +8,7 @@ use DateTimeInterface;
 abstract class Model extends BaseModel
 {
     protected $keyType = 'string';
+    
     public $incrementing = false;
 
     

@@ -25,7 +25,7 @@ class CheckLoginWeb
     public function handle($request, Closure $next)
     {
         if(\Auth::check()){
-            return redirect('/product');
+            return redirect('/');
         }
         return $next($request);
     }

@@ -52,19 +52,19 @@
     <tr>
         
         <td><a href="{{route('get_order_detail', $result->id)}}">{{$result->id}}</a></td>
-        @if($result->type == 0)
+        @if($result->customer_id)
         <td>{{$result->customer->name}}</td>
-        @elseif($result->type == 1)
+        @elseif($result->user_id)
         <td>{{$result->user->name}}</td>
         @endif
-        @if($result->type == 0)
+        @if($result->customer_id)
         <td>{{$result->customer->phone}}</td>
-        @elseif($result->type == 1)
+        @elseif($result->user_id)
         <td>{{$result->user->phone}}</td>
         @endif
         <td>{{$result->total_price}}</td>
         @if($result->status == 0)
-        <td><span class="label label-success">đang chuẩn bị</span></td>
+        <td><span class="label label-success">Đang trong giỏ hàng</span></td>
         @elseif($result->status == 1)
         <td><span class="label label-success">đanng giao</span></td>
         @elseif($result->status == 2)
